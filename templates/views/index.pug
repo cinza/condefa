@@ -1,7 +1,7 @@
 extends ../layouts/default
 
 block content
-	- if (home)
+	- if (home[0])
 		section.container
 			section#top-banner
 				#carouselWrapper.carousel.slide(data-ride="carousel")
