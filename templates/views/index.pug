@@ -1,123 +1,122 @@
 extends ../layouts/default
 
 block content
-- if(home)
-		section.container
-			section#top-banner
-				#carouselWrapper.carousel.slide(data-ride="carousel")
-					ol.carousel-indicators
-						li(data-target="#carouselWrapper" data-slide-to="0").active
-						li(data-target="#carouselWrapper" data-slide-to="1")
-						li(data-target="#carouselWrapper" data-slide-to="2")
-						li(data-target="#carouselWrapper" data-slide-to="3")
-					div.carousel-inner(role="listbox")
-						div.item.active
-							- if (src=home[0].imageSlider1.url)
-								img(src=home[0].imageSlider1.url alt="primer imagen")
-								div.carousel-caption#caption-1
-									h3 #{home[0].textSlider1}
-						div.item
-							- if (src=home[0].imageSlider2.url)
-								img(src=home[0].imageSlider2.url alt="segundo imagen")
-								div.carousel-caption#caption-2
-									h3 #{home[0].textSlider2}
-						div.item
-							- if (src=home[0].imageSlider3.url)
-								img(src=home[0].imageSlider3.url alt="tercer imagen")
-								div.carousel-caption#caption-3
-									h3 #{home[0].textSlider3}
-						div.item
-							- if (src=home[0].imageSlider4.url)
-								img(src=home[0].imageSlider4.url alt="cuarto slide")
-								div.carousel-caption#caption-4
-									h3 #{home[0].textSlider4}
-			
-			section#sub-nav
-				div.col-md-4.col-sm-12.col-xs-12.nopadding
-					a(href="/")
-						- if (src=home[0].bannerComercialImg.url)
-								img(src=home[0].bannerComercialImg.url alt="comercio")
-						div.title
-							h2 COMERCIAL
-							p Promociones. Beneficios. Comodidad
-						
-				div.col-md-4.col-sm-12.col-xs-12.nopadding
-					a(href="/")
-						- if (src=home[0].bannerNewsImg.url)
-								img(src=home[0].bannerNewsImg.url alt="noticias")
-						div.title
-							h2 SALUD AL DÍA
-							p Nuevas noticas cada semana
-				div.col-md-4.col-sm-12.col-xs-12.nopadding
-					a(href="/")
-						- if (src=home[0].bannerNewsImg.url)
-								img(src=home[0].bannerPlanImg.url alt="plan paciente")
-						div.title
-							h2 PLAN PACIENTE
-							p Descubra los planes para Octubre
-			section#about
-				- if (home[0].aboutImg.url)
-					img(src=home[0].aboutImg.url alt="sobre nosotros")
-				- else
-					img(src=home[0].imageSlider1.url alt="sobre nosotros")
-				div.about-content.row
-					.menu-about.col-md4.col-sm-4
-						ul
-							li.showContent.active(data-content='0') Propuesta de Valor
-							li.showContent(data-content='1')  Historia
-							li.showContent(data-content='2')  Misión y visión
-							li.showContent(data-content='3')  Valores
-							li.showContent(data-content='4')  Objetivos
+	section.container
+		section#top-banner
+			#carouselWrapper.carousel.slide(data-ride="carousel")
+				ol.carousel-indicators
+					li(data-target="#carouselWrapper" data-slide-to="0").active
+					li(data-target="#carouselWrapper" data-slide-to="1")
+					li(data-target="#carouselWrapper" data-slide-to="2")
+					li(data-target="#carouselWrapper" data-slide-to="3")
+				div.carousel-inner(role="listbox")
+					div.item.active
+						- if (src=home[0].imageSlider1.url)
+							img(src=home[0].imageSlider1.url alt="primer imagen")
+						div.carousel-caption#caption-1
+							h3 #{home[0].textSlider1}
+					div.item
+						- if (src=home[0].imageSlider2.url)
+							img(src=home[0].imageSlider2.url alt="segundo imagen")
+						div.carousel-caption#caption-2
+							h3 #{home[0].textSlider2}
+					div.item
+						- if (src=home[0].imageSlider3.url)
+							img(src=home[0].imageSlider3.url alt="tercer imagen")
+						div.carousel-caption#caption-3
+							h3 #{home[0].textSlider3}
+					div.item
+						- if (src=home[0].imageSlider4.url)
+							img(src=home[0].imageSlider4.url alt="cuarto slide")
+						div.carousel-caption#caption-4
+							h3 #{home[0].textSlider4}
+		
+		section#sub-nav
+			div.col-md-4.col-sm-12.col-xs-12.nopadding
+				a(href="/")
+					- if (src=home[0].bannerComercialImg.url)
+					img(src=home[0].bannerComercialImg.url alt="comercio")
+					div.title
+						h2 COMERCIAL
+						p Promociones. Beneficios. Comodidad
 					
-					div.slides-about.col-md-8.col-sm-8
-						div.slide-about.active
-							-	if (home[0].purposesValue)
-								!= home[0].purposesValue
-						div.slide-about
-							-	if (home[0].history)
-								!= home[0].history
-						div.slide-about
-							-	if (home[0].mision)
-								!= home[0].mision
-						div.slide-about
-							-	if (home[0].values)
-								!= home[0].values
-						div.slide-about
-							-	if (home[0].purposes)
-								!= home[0].purposes
-			section#map-findus
-				#map
-			section#contact
-				div.row
-					div.col-md-4.col-sm-12
-						.contact-text.col-md-10.col-ms-11
-							-if (home[0].descripcionForm)
-								!= home[0].descripcionForm
-					div.col-md-8.col-sm-12
-						a(ref='/').logo-white
-							img(src='/images/logo_white.png' alt='condefa logo')
-						div.form-contact.col-md-12.col-sm-12
-							form(method='post' action='http://formspree.io/andrea.zr92@gmail.com' data-toggle="validator")
-								.form-group
-									input(type='text', name='name',placeholder="Nombre" required  data-error="Espacio requerido" ).form-control
-		
-									input(type='email', name='email', placeholder="Email" required data-error="Espacio requerido").form-control
-								.form-group
-									textarea(name='message', placeholder='Mensaje' rows=4 required data-error="Espacio requerido").form-control
-								.form-actions
-									button(type='submit').btn.btn-primary Enviar
-		
+			div.col-md-4.col-sm-12.col-xs-12.nopadding
+				a(href="/")
+					- if (src=home[0].bannerNewsImg.url)
+							img(src=home[0].bannerNewsImg.url alt="noticias")
+					div.title
+						h2 SALUD AL DÍA
+						p Nuevas noticas cada semana
+			div.col-md-4.col-sm-12.col-xs-12.nopadding
+				a(href="/")
+					- if (src=home[0].bannerNewsImg.url)
+							img(src=home[0].bannerPlanImg.url alt="plan paciente")
+					div.title
+						h2 PLAN PACIENTE
+						p Descubra los planes para Octubre
+		section#about
+			- if (home[0].aboutImg.url)
+				img(src=home[0].aboutImg.url alt="sobre nosotros")
+			- else
+				img(src=home[0].imageSlider1.url alt="sobre nosotros")
+			div.about-content.row
+				.menu-about.col-md4.col-sm-4
+					ul
+						li.showContent.active(data-content='0') Propuesta de Valor
+						li.showContent(data-content='1')  Historia
+						li.showContent(data-content='2')  Misión y visión
+						li.showContent(data-content='3')  Valores
+						li.showContent(data-content='4')  Objetivos
 				
-				div.row
-					p.copy-right Copyright 2017. Corporación Nacional de Farmacia S.A Tel:(506) 2539-8181 Fax:(506) 2257-7269
-					
-				script(type="text/javascript").
-					var map;
-					function initMap() {
-							map = new google.maps.Map(document.getElementById('map'), {
-								center: {lat: 9.927128, lng: -84.082012},
-								zoom: 10
-							});
+				div.slides-about.col-md-8.col-sm-8
+					div.slide-about.active
+						-	if (home[0].purposesValue)
+							!= home[0].purposesValue
+					div.slide-about
+						-	if (home[0].history)
+							!= home[0].history
+					div.slide-about
+						-	if (home[0].mision)
+							!= home[0].mision
+					div.slide-about
+						-	if (home[0].values)
+							!= home[0].values
+					div.slide-about
+						-	if (home[0].purposes)
+							!= home[0].purposes
+		section#map-findus
+			#map
+		section#contact
+			div.row
+				div.col-md-4.col-sm-12
+					.contact-text.col-md-10.col-ms-11
+						-if (home[0].descripcionForm)
+							!= home[0].descripcionForm
+				div.col-md-8.col-sm-12
+					a(ref='/').logo-white
+						img(src='/images/logo_white.png' alt='condefa logo')
+					div.form-contact.col-md-12.col-sm-12
+						form(method='post' action='http://formspree.io/andrea.zr92@gmail.com' data-toggle="validator")
+							.form-group
+								input(type='text', name='name',placeholder="Nombre" required  data-error="Espacio requerido" ).form-control
+	
+								input(type='email', name='email', placeholder="Email" required data-error="Espacio requerido").form-control
+							.form-group
+								textarea(name='message', placeholder='Mensaje' rows=4 required data-error="Espacio requerido").form-control
+							.form-actions
+								button(type='submit').btn.btn-primary Enviar
+	
+			
+			div.row
+				p.copy-right Copyright 2017. Corporación Nacional de Farmacia S.A Tel:(506) 2539-8181 Fax:(506) 2257-7269
+				
+			script(type="text/javascript").
+				var map;
+				function initMap() {
+						map = new google.maps.Map(document.getElementById('map'), {
+							center: {lat: 9.927128, lng: -84.082012},
+							zoom: 10
+						});
 
 
-					}
+				}
