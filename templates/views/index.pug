@@ -49,7 +49,8 @@ block content
 						p Nuevas noticas cada semana
 			div.col-md-4.col-sm-12.col-xs-12.nopadding
 				a(href="/")
-					img(src=home[0].bannerPlanImg.url alt="plan paciente")
+					- if (src=home[0].bannerNewsImg.url)
+						img(src=home[0].bannerPlanImg.url alt="plan paciente")
 					div.title
 						h2 PLAN PACIENTE
 						p Descubra los planes para Octubre
