@@ -12,22 +12,22 @@ block content
 						li(data-target="#carouselWrapper" data-slide-to="3")
 					div.carousel-inner(role="listbox")
 						div.item.active
-							- if (src=home[0].imageSlider1.url)
+							- if (home[0].imageSlider1.url)
 								img(src=home[0].imageSlider1.url alt="primer imagen")
 							div.carousel-caption#caption-1
 								h3 #{home[0].textSlider1}
 						div.item
-							- if (src=home[0].imageSlider2.url)
+							- if (home[0].imageSlider2.url)
 								img(src=home[0].imageSlider2.url alt="segundo imagen")
 							div.carousel-caption#caption-2
 								h3 #{home[0].textSlider2}
 						div.item
-							- if (src=home[0].imageSlider3.url)
+							- if (home[0].imageSlider3.url)
 								img(src=home[0].imageSlider3.url alt="tercer imagen")
 							div.carousel-caption#caption-3
 								h3 #{home[0].textSlider3}
 						div.item
-							- if (src=home[0].imageSlider4.url)
+							- if (home[0].imageSlider4.url)
 								img(src=home[0].imageSlider4.url alt="cuarto slide")
 							div.carousel-caption#caption-4
 								h3 #{home[0].textSlider4}
@@ -35,7 +35,7 @@ block content
 			section#sub-nav
 				div.col-md-4.col-sm-12.col-xs-12.nopadding
 					a(href="/")
-						- if (src=home[0].bannerComercialImg.url)
+						- if (home[0].bannerComercialImg.url)
 						img(src=home[0].bannerComercialImg.url alt="comercio")
 						div.title
 							h2 COMERCIAL
@@ -43,14 +43,14 @@ block content
 						
 				div.col-md-4.col-sm-12.col-xs-12.nopadding
 					a(href="/")
-						- if (src=home[0].bannerNewsImg.url)
+						- if home[0].bannerNewsImg.url)
 								img(src=home[0].bannerNewsImg.url alt="noticias")
 						div.title
 							h2 SALUD AL DÍA
 							p Nuevas noticas cada semana
 				div.col-md-4.col-sm-12.col-xs-12.nopadding
 					a(href="/")
-						- if (src=home[0].bannerNewsImg.url)
+						- if (home[0].bannerNewsImg.url)
 								img(src=home[0].bannerPlanImg.url alt="plan paciente")
 						div.title
 							h2 PLAN PACIENTE
