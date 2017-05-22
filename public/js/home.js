@@ -1,4 +1,5 @@
-
+// // $('.carousel').carousel();
+// console.log('hola');
 $(document).ready(function(){
     $(".showContent").click(function(){
       $('.showContent').removeClass('active');
@@ -8,7 +9,6 @@ $(document).ready(function(){
         console.log(elem);
         $(this).toggleClass('active');
         $(elem).toggleClass('active');
-
     });
 
 });

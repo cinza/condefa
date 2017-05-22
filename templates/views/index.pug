@@ -13,7 +13,7 @@ block content
 					div.carousel-inner(role="listbox")
 						div.item.active
 							- if (home[0].imageSlider1.url)
-								img(home[0].imageSlider1.url alt="primer imagen")
+								img(src=home[0].imageSlider1.url alt="primer imagen")
 							div.carousel-caption#caption-1
 								h3 #{home[0].textSlider1}
 						div.item
@@ -43,7 +43,7 @@ block content
 						
 				div.col-md-4.col-sm-12.col-xs-12.nopadding
 					a(href="/")
-						- if home[0].bannerNewsImg.url)
+						- if (home[0].bannerNewsImg.url)
 								img(src=home[0].bannerNewsImg.url alt="noticias")
 						div.title
 							h2 SALUD AL DÍA
