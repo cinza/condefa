@@ -7,7 +7,7 @@ var Types = keystone.Field.Types;
  */
 
 var Home = new keystone.List('Home',{
-  nocreate: false,
+  nocreate: true,
   singular:"Home",
   plural:"Home",
   autokey: {path:"slug", from: "title", unique: true},

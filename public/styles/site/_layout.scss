@@ -96,13 +96,17 @@ a.navbar-brand{
 /**********************/
 
 
+
 #carouselWrapper{
 	width:100%;
+	overflow:hidden;
+	height:515px;
 	.item{
 		position: relative;
 	}
 	.carousel-caption{
 			position: absolute;
+			overflow:hidden;
 
 		h3{
 
@@ -113,14 +117,14 @@ a.navbar-brand{
 		}
 		&#caption-1{
 			color: #254a94;
-			bottom: 170px;
+			bottom: 32%;
 			left: 51%;
 			width: 40%;
 			text-align: left;
 		}
 		&#caption-2{
 			color:#54a74e;
-			bottom: 100px;
+			bottom: 20%;
 			left: 11%;
 			width: 40%;
 			text-align: left;
@@ -128,14 +132,14 @@ a.navbar-brand{
 		&#caption-3{
 			color:#fff;
 
-			bottom: 110px;
+			bottom: 21%;
 			left: 43%;
 			width: 55%;
 			text-align: left;
 		}
 		&#caption-4{
 			color: #254a94;
-			bottom: 140px;
+			bottom: 22%;
 			left: 10%;
 			width: 40%;
 			text-align: left;
@@ -246,9 +250,7 @@ a.navbar-brand{
 }
 
 #map-findus{
-	min-height:500px;
 	#map {
-	    height: 100%;
 			height:500px;
 	  }
 }
@@ -280,6 +282,7 @@ a.navbar-brand{
 		}
 		.form-group
 			input, textarea{
+				color:#fff;
 				font-weight:100;
 				float:left;
 				width: 200px;
@@ -303,7 +306,7 @@ a.navbar-brand{
 			}
 			textarea{
 				clear: both;
-				width:410px;
+				width:100%;
 				height: 100px;
 			}
 			.form-actions{
@@ -327,5 +330,81 @@ a.navbar-brand{
 		color:#fff;
 		font-size: 10px;
 		margin: 40px 0;
+	}
+}
+
+@media only screen and (max-width : 768px) {
+
+	a.navbar-brand{
+		width:115px;
+	}
+	#carouselWrapper{
+		height:336px;
+		.carousel-caption{
+				position: absolute;
+
+			h3{
+				font-size:18px;
+			}
+	}
+	#map-findus{
+		#map{
+			height:300px;
+		}
+	}
+}
+}
+
+@media only screen and (max-width : 480px){
+	a.navbar-brand{
+		width:115px;
+	}
+	#carouselWrapper{
+			height:172px;
+			.carousel-caption{
+					position: absolute;
+
+				h3{
+					font-size:18px;
+				}
+		}
+	}
+	#about .menu-about ul li{
+		font-size: 12px;
+	}
+	#about .menu-about ul li.active{
+		font-size: 12px;
+	}
+	#map-findus{
+		#map{
+			height:300px;
+		}
+	}
+}
+@media only screen and (max-width : 320px){
+	a.navbar-brand{
+		width:115px;
+	}
+	#carouselWrapper{
+		height:172px;
+		.carousel-caption{
+				position: absolute;
+
+			h3{
+				font-size:18px;
+			}
+		}
+
+	}
+	#about .menu-about ul li.active{
+		font-size: 12px;
+	}
+	#about .menu-about ul li{
+		font-size: 12px;
+	}
+	#map-findus{
+		#map{
+			height:300px;
+		}
 	}
 }

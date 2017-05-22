@@ -61,7 +61,7 @@ block content
 				- else
 					img(src=home[0].imageSlider1.url alt="sobre nosotros")
 				div.about-content.row
-					.menu-about.col-md4.col-sm-4
+					.menu-about.col-md4.col-sm-4.col-xs-5
 						ul
 							li.showContent.active(data-content='0') Propuesta de Valor
 							li.showContent(data-content='1')  Historia
@@ -69,7 +69,7 @@ block content
 							li.showContent(data-content='3')  Valores
 							li.showContent(data-content='4')  Objetivos
 					
-					div.slides-about.col-md-8.col-sm-8
+					div.slides-about.col-md-8.col-sm-6.col-xs-6
 						div.slide-about.active
 							-	if (home[0].purposesValue)
 								!= home[0].purposesValue
@@ -90,13 +90,13 @@ block content
 			section#contact
 				div.row
 					div.col-md-4.col-sm-12
-						.contact-text.col-md-10.col-ms-11
+						.contact-text.col-md-10.hidden-sm.hidden-xs
 							-if (home[0].descripcionForm)
 								!= home[0].descripcionForm
-					div.col-md-8.col-sm-12
+					div.col-md-8.col-sm-12-col-xs-12
 						a(ref='/').logo-white
 							img(src='/images/logo_white.png' alt='condefa logo')
-						div.form-contact.col-md-12.col-sm-12
+						div.form-contact.col-md-12.col-sm-12-col-xs-12
 							form(method='post' action='http://formspree.io/andrea.zr92@gmail.com' data-toggle="validator")
 								.form-group
 									input(type='text', name='name',placeholder="Nombre" required  data-error="Espacio requerido" ).form-control
@@ -108,7 +108,7 @@ block content
 									button(type='submit').btn.btn-primary Enviar
 		
 				
-				div.row
+				div.row.col-sm-12-col-xs-12
 					p.copy-right Copyright 2017. Corporación Nacional de Farmacia S.A Tel:(506) 2539-8181 Fax:(506) 2257-7269
 					
 				script(type="text/javascript").
