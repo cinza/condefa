@@ -21,6 +21,9 @@ exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
 		{ label: 'Inicio', key: 'home', href: '/' },
 		{ label: 'Quienes somos', key: 'contact', href: '/' },
+		{ label: 'Farmacias', key:'farmacy' , href:'/'},
+		{label: 'Contacto', key:'contact', href:'/'},
+		{label:'Condefa Online', key:'online', href:'/'}
 	];
 	res.locals.user = req.user;
 	next();
