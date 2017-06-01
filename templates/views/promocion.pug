@@ -1,0 +1,21 @@
+extends ../layouts/default
+block content
+	section.container
+		section#top-banner
+			.bannerComercialImg
+				img(src="" alt="")
+	section#wrapper-news
+		div.row
+			div.col-md-9.col-sm-8.col-xs-12
+				-if(promocion)
+					each item in promocion
+						.box-news
+							.box-news-media-wrapper
+							.box-news-content
+								.box-news-top
+									h3 promo
+									span.date
+								.box-news-preview-content
+									
+			div.col-md-3.col-sm-4.col-xs-12
+			

@@ -55,6 +55,8 @@ html
 						a.navbar-brand(href='/') 
 							img(src="/images/logo.png" alt="condefa logo")
 					.collapse.navbar-collapse
+						a.logo-small.hidden-md.hidden-xl(hre="/")
+							img(src="/images/logo_white_small.png" alt="condefa logo")
 						ul.nav.navbar-nav.navbar-right
 							each link in navLinks
 								li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label

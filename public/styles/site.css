@@ -5846,7 +5846,8 @@ button.close {
         text-shadow: 1px 1px 1px #545454;
         padding: 0.25em 0.25em;
         display: inline-block;
-        font-size: 0.80em; }
+        font-size: 1.2em;
+        font-weight: bold; }
       .navbar-default .navbar-nav li.active a {
         background: none;
         border: 1px solid #fff;
@@ -5860,7 +5861,9 @@ button.close {
         color: #ccc; }
 
 .navbar-default .navbar-collapse {
-  background: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
   border: none; }
 
 a.navbar-brand {
@@ -5869,12 +5872,32 @@ a.navbar-brand {
   a.navbar-brand img {
     width: 100%; }
 
+.navbar-default .navbar-toggle {
+  z-index: 99; }
+
+a.logo-small {
+  margin: 20px 0 0 10px;
+  display: inline-block;
+  float: left;
+  display: none; }
+
 .navbar-nav > li {
   float: none; }
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background: none;
+  z-index: 99; }
+
+.navbar-default .navbar-toggle {
+  position: fixed;
+  right: 0; }
 
 .nopadding {
   padding: 0 !important;
   margin: 0 !important; }
+
+.navbar-default .navbar-toggle .icon-bar {
+  background: #fff; }
 
 /***********************/
 /* END GLOBAL STYLES
@@ -5885,49 +5908,49 @@ a.navbar-brand {
   padding-top: 30px;
   color: #777777; }
 
-.gallery-image img {
-  display: block;
-  max-width: 100%;
-  height: auto; }
-
 /***********************/
 /*HOME STYLES
 /**********************/
+#top-banner {
+  overflow: hidden; }
+
 #carouselWrapper {
+  z-index: 1;
   width: 100%;
   overflow: hidden;
-  height: 515px; }
+  height: 450px; }
   #carouselWrapper .item {
-    position: relative; }
+    position: relative;
+    overflow: hidden; }
   #carouselWrapper .carousel-caption {
     position: absolute;
     overflow: hidden; }
     #carouselWrapper .carousel-caption h3 {
       text-transform: uppercase;
-      font-size: 35px;
+      font-size: 45px;
       font-weight: 800;
       box-shadow: none; }
     #carouselWrapper .carousel-caption#caption-1 {
       color: #254a94;
-      bottom: 32%;
+      bottom: 40%;
       left: 51%;
       width: 40%;
       text-align: left; }
     #carouselWrapper .carousel-caption#caption-2 {
       color: #54a74e;
-      bottom: 20%;
+      bottom: 34%;
       left: 11%;
       width: 40%;
       text-align: left; }
     #carouselWrapper .carousel-caption#caption-3 {
       color: #fff;
-      bottom: 21%;
-      left: 43%;
+      bottom: 36%;
+      left: 44%;
       width: 55%;
       text-align: left; }
     #carouselWrapper .carousel-caption#caption-4 {
       color: #254a94;
-      bottom: 22%;
+      bottom: 32%;
       left: 10%;
       width: 40%;
       text-align: left; }
@@ -5952,6 +5975,29 @@ a.navbar-brand {
       text-decoration: underline; }
   #sub-nav img {
     width: 100%; }
+
+.carousel-fade .carousel-inner .item {
+  transition-property: opacity; }
+
+.carousel-fade .carousel-inner .item,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  opacity: 0; }
+
+.carousel-fade .carousel-inner .active,
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1; }
+
+.carousel-fade .carousel-inner .next,
+.carousel-fade .carousel-inner .prev,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  transform: translate3d(0, 0, 0); }
+
+.carousel-fade .carousel-control {
+  z-index: 2; }
 
 #about {
   width: 100%;
@@ -6000,16 +6046,95 @@ a.navbar-brand {
     top: 0;
     left: 0;
     opacity: 0;
+    padding-left: 30px;
     transform: translate(0, 50px);
     transition: all 0.3s ease; }
     #about .slide-about.active {
       opacity: 1;
       transform: translate(0, 0); }
 
-#map-findus #map {
-  height: 500px; }
+#map-findus {
+  position: relative; }
+  #map-findus .title-map {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #254a94;
+    font-weight: 800;
+    font-size: 35px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    z-index: 99; }
+  #map-findus #map-content {
+    box-shadow: 6px 2px 22px #000;
+    z-index: 99;
+    height: 558px; }
+  #map-findus .content-location-top .location-img {
+    min-height: 100px;
+    background: beige;
+    height: 180px; }
+  #map-findus .content-location-top .location-title {
+    padding: 10px 0 10px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    background: #265384;
+    background: -moz-linear-gradient(top, #265384 0%, #518c5b 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #265384), color-stop(100%, #518c5b));
+    background: -webkit-linear-gradient(top, #265384 0%, #518c5b 100%);
+    background: -o-linear-gradient(top, #265384 0%, #518c5b 100%);
+    background: -ms-linear-gradient(top, #265384 0%, #518c5b 100%);
+    background: linear-gradient(to bottom, #265384 0%, #518c5b 100%); }
+    #map-findus .content-location-top .location-title h3 {
+      color: #fff;
+      font-size: 25px;
+      font-weight: 800; }
+    #map-findus .content-location-top .location-title span {
+      padding: 10px 0 0 0;
+      display: inline-block; }
+  #map-findus .content-location-bottom {
+    font-weight: 800;
+    text-align: center; }
+    #map-findus .content-location-bottom ul {
+      list-style: none;
+      padding: 0;
+      width: 85%;
+      margin: 30px auto;
+      overflow: hidden;
+      text-align: left; }
+      #map-findus .content-location-bottom ul li {
+        color: #265384;
+        float: left;
+        padding-bottom: 15px;
+        text-indent: 30px;
+        width: 50%;
+        font-size: 12px; }
+        #map-findus .content-location-bottom ul li.phone-icon {
+          background: url("../images/phone-icon.png") no-repeat 0 0; }
+        #map-findus .content-location-bottom ul li.phone-icon-2 {
+          background: url("../images/phone-icon-2.png") no-repeat 0 0; }
+        #map-findus .content-location-bottom ul li.pressure-icon {
+          background: url("../images/pressure-icon.png") no-repeat 0 0; }
+        #map-findus .content-location-bottom ul li.parkingLot-icon {
+          background: url("../images/parkingLot-icon.png") no-repeat 0 0; }
+        #map-findus .content-location-bottom ul li.recipe-icon {
+          background: url("../images/recipe-icon.png") no-repeat 0 0; }
+        #map-findus .content-location-bottom ul li.express-icon {
+          background: url("../images/express-icon.png") no-repeat 0 0; }
+        #map-findus .content-location-bottom ul li.injections-icon {
+          background: url("../images/injections-icon.png") no-repeat 0 0; }
+    #map-findus .content-location-bottom a.share-location {
+      display: inline-block;
+      color: #254a94;
+      background: url(../images/share-icon.png) no-repeat 0 0;
+      font-size: 20px;
+      text-indent: 51px;
+      padding: 4px 0 25px;
+      margin: 0 auto; }
+  #map-findus #map {
+    width: 100%;
+    height: 558px; }
 
 #contact {
+  clear: both;
   min-height: 453px;
   background: url("../images/bg-form.png") no-repeat 0 0; }
   #contact .logo-white {
@@ -6026,13 +6151,19 @@ a.navbar-brand {
     height: 170px;
     margin: 150px 0 0 0px;
     overflow: hidden; }
+  #contact .contact-text-small {
+    color: #fff;
+    font-size: 11px;
+    font-weight: 100;
+    text-align: center; }
   #contact .form-contact .form-group {
-    clear: both; }
+    clear: both;
+    overflow: hidden; }
   #contact .form-contact .form-group input, #contact .form-contact textarea {
     color: #fff;
     font-weight: 100;
     float: left;
-    width: 200px;
+    width: 250px;
     height: 40px;
     margin: 10px 10px 10px 0;
     background: none;
@@ -6052,7 +6183,7 @@ a.navbar-brand {
       color: #fff; }
   #contact .form-contact textarea {
     clear: both;
-    width: 100%;
+    width: 80%;
     height: 100px; }
   #contact .form-contact .form-actions {
     clear: both; }
@@ -6070,7 +6201,15 @@ a.navbar-brand {
     text-align: center;
     color: #fff;
     font-size: 10px;
-    margin: 40px 0; }
+    padding: 25px 0;
+    clear: both; }
+
+/***********************/
+/* Media Query fixes
+/**********************/
+@media only screen and (max-width: 992px) {
+  #carouselWrapper {
+    height: 400px; } }
 
 @media only screen and (max-width: 768px) {
   a.navbar-brand {
@@ -6081,37 +6220,127 @@ a.navbar-brand {
       position: absolute; }
       #carouselWrapper .carousel-caption h3 {
         font-size: 18px; }
-    #carouselWrapper #map-findus #map {
-      height: 300px; } }
+  #map-findus #map {
+    height: 300px; }
+  #sub-nav a {
+    height: 250px; } }
 
 @media only screen and (max-width: 480px) {
   a.navbar-brand {
     width: 115px; }
+  .navbar-default .navbar-collapse {
+    background: #084d8b; }
+  a.logo-small {
+    display: block; }
+  .navbar-default .navbar-nav {
+    margin-top: 4em; }
+  .navbar-default .navbar-nav li a {
+    font-size: 13px; }
+  .navbar-default .navbar-nav li.active a {
+    border-radius: 0;
+    border: 0;
+    text-decoration: underline; }
   #carouselWrapper {
     height: 172px; }
     #carouselWrapper .carousel-caption {
       position: absolute; }
       #carouselWrapper .carousel-caption h3 {
-        font-size: 18px; }
-  #about .menu-about ul li {
-    font-size: 12px; }
-  #about .menu-about ul li.active {
-    font-size: 12px; }
+        font-size: 13px; }
+      #carouselWrapper .carousel-caption#caption-1 {
+        bottom: 20%;
+        left: 50%;
+        width: 50%; }
+      #carouselWrapper .carousel-caption#caption-2 {
+        bottom: 12%;
+        left: 11%;
+        width: 65%; }
+      #carouselWrapper .carousel-caption#caption-3 {
+        bottom: 18%;
+        left: 32%;
+        width: 64%; }
+      #carouselWrapper .carousel-caption#caption-4 {
+        bottom: 15%; }
+  #sub-nav a {
+    height: 140px; }
+  #about {
+    height: auto; }
+    #about .menu-about {
+      position: absolute;
+      top: -58px;
+      overflow: hidden;
+      left: -16px; }
+      #about .menu-about ul li {
+        float: left;
+        font-size: 12px;
+        display: inline;
+        margin: 0 15px 10px 0;
+        clear: none;
+        font-weight: normal; }
+        #about .menu-about ul li.active {
+          font-size: 12px;
+          padding: 0;
+          border: 0;
+          text-decoration: underline;
+          font-weight: bold; }
   #map-findus #map {
     height: 300px; } }
 
 @media only screen and (max-width: 320px) {
   a.navbar-brand {
     width: 115px; }
+  .navbar-default .navbar-collapse {
+    background: #084d8b; }
+  a.logo-small {
+    display: block; }
+  .navbar-default .navbar-nav {
+    margin-top: 4em; }
+  .navbar-default .navbar-nav li a {
+    font-size: 13px; }
+  .navbar-default .navbar-nav li.active a {
+    border-radius: 0;
+    border: 0;
+    text-decoration: underline; }
   #carouselWrapper {
-    height: 172px; }
+    height: 148px; }
     #carouselWrapper .carousel-caption {
       position: absolute; }
       #carouselWrapper .carousel-caption h3 {
-        font-size: 18px; }
-  #about .menu-about ul li.active {
-    font-size: 12px; }
-  #about .menu-about ul li {
-    font-size: 12px; }
+        font-size: 13px; }
+      #carouselWrapper .carousel-caption#caption-1 {
+        bottom: 20%;
+        left: 50%;
+        width: 50%; }
+      #carouselWrapper .carousel-caption#caption-2 {
+        bottom: 12%;
+        left: 11%;
+        width: 65%; }
+      #carouselWrapper .carousel-caption#caption-3 {
+        bottom: 18%;
+        left: 32%;
+        width: 64%; }
+      #carouselWrapper .carousel-caption#caption-4 {
+        bottom: 15%; }
+  #sub-nav a {
+    height: 130px; }
+  #about {
+    height: auto; }
+    #about .menu-about {
+      position: absolute;
+      top: -58px;
+      overflow: hidden;
+      left: -16px; }
+      #about .menu-about ul li {
+        float: left;
+        font-size: 12px;
+        display: inline;
+        margin: 0 15px 10px 0;
+        clear: none;
+        font-weight: normal; }
+        #about .menu-about ul li.active {
+          font-size: 12px;
+          padding: 0;
+          border: 0;
+          text-decoration: underline;
+          font-weight: bold; }
   #map-findus #map {
     height: 300px; } }

@@ -1,5 +1,4 @@
-// // $('.carousel').carousel();
-// console.log('hola');
+
 $(document).ready(function(){
     $(".showContent").click(function(){
       $('.showContent').removeClass('active');

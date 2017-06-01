@@ -2,9 +2,9 @@ extends ../layouts/default
 
 block content
 	- if (home[0])
-		section.container
+		section.col-md-12.nopadding
 			section#top-banner
-				#carouselWrapper.carousel.slide(data-ride="carousel")
+				#carouselWrapper.carousel.slide.carousel-fade(data-ride="carousel")
 					ol.carousel-indicators
 						li(data-target="#carouselWrapper" data-slide-to="0").active
 						li(data-target="#carouselWrapper" data-slide-to="1")
@@ -28,30 +28,30 @@ block content
 								h3 #{home[0].textSlider3}
 						div.item
 							- if (home[0].imageSlider4.url)
-								img(src=home[0].imageSlider4.url alt="cuarto slide")
+								img(src=home[0].imageSlider4.url alt="cuarta imagen")
 							div.carousel-caption#caption-4
 								h3 #{home[0].textSlider4}
-			
+
 			section#sub-nav
 				div.col-md-4.col-sm-12.col-xs-12.nopadding
 					a(href="/")
 						- if (home[0].bannerComercialImg.url)
-						img(src=home[0].bannerComercialImg.url alt="comercio")
+						img(src=home[0].bannerComercialImg.url alt="comercio").img-responsive
 						div.title
-							h2 COMERCIAL
+							h2 VALORES AGREGADOS
 							p Promociones. Beneficios. Comodidad
-						
+
 				div.col-md-4.col-sm-12.col-xs-12.nopadding
 					a(href="/")
 						- if (home[0].bannerNewsImg.url)
-								img(src=home[0].bannerNewsImg.url alt="noticias")
+								img(src=home[0].bannerNewsImg.url alt="noticias").img-responsive
 						div.title
 							h2 SALUD AL DÍA
 							p Nuevas noticas cada semana
 				div.col-md-4.col-sm-12.col-xs-12.nopadding
 					a(href="/")
 						- if (home[0].bannerNewsImg.url)
-								img(src=home[0].bannerPlanImg.url alt="plan paciente")
+								img(src=home[0].bannerPlanImg.url alt="plan paciente").img-responsive
 						div.title
 							h2 PLAN PACIENTE
 							p Descubra los planes para Octubre
@@ -61,15 +61,15 @@ block content
 				- else
 					img(src=home[0].imageSlider1.url alt="sobre nosotros")
 				div.about-content.row
-					.menu-about.col-md4.col-sm-4.col-xs-5
+					.menu-about.col-md-4.col-sm-12.col-xs-12.nopadding
 						ul
 							li.showContent.active(data-content='0') Propuesta de Valor
 							li.showContent(data-content='1')  Historia
 							li.showContent(data-content='2')  Misión y visión
 							li.showContent(data-content='3')  Valores
 							li.showContent(data-content='4')  Objetivos
-					
-					div.slides-about.col-md-8.col-sm-6.col-xs-6
+
+					div.slides-about.col-md-8.col-sm-12.col-xs-12
 						div.slide-about.active
 							-	if (home[0].purposesValue)
 								!= home[0].purposesValue
@@ -85,32 +85,54 @@ block content
 						div.slide-about
 							-	if (home[0].purposes)
 								!= home[0].purposes
-			section#map-findus
-				#map
+			section#map-findus.col-md-12.nopadding
+				h4.title-map ENCUENTRE SU </br> FARMACIA
+				.col-md-4.nopadding#map-content.hidden-sm.hidden-xs
+					.content-location-top
+						.location-img
+						.location-title
+							h3 Farmacia Residencial Norte 2
+							span Limon Centro 75 Este de Radio casino
+					.content-location-bottom
+						ul
+							li.phone-icon 2234-5678
+							li.phone-icon-2 2234-5678
+							li.pressure-icon Toma de presión
+							li.parkingLot-icon Parqueo
+							li.recipe-icon Recetas
+							li.express-icon Servicio a domicilio
+							li.injections-icon Inyecciones
+
+						a.share-location(href="") COMPARTIR
+
+				.col-md-8.nopadding
+					#map
 			section#contact
-				div.row
-					div.col-md-4.col-sm-12
-						.contact-text.col-md-10.hidden-sm.hidden-xs
-							-if (home[0].descripcionForm)
-								!= home[0].descripcionForm
-					div.col-md-8.col-sm-12-col-xs-12
-						a(ref='/').logo-white
-							img(src='/images/logo_white.png' alt='condefa logo')
-						div.form-contact.col-md-12.col-sm-12-col-xs-12
-							form(method='post' action='http://formspree.io/andrea.zr92@gmail.com' data-toggle="validator")
-								.form-group
-									input(type='text', name='name',placeholder="Nombre" required  data-error="Espacio requerido" ).form-control
-		
-									input(type='email', name='email', placeholder="Email" required data-error="Espacio requerido").form-control
-								.form-group
-									textarea(name='message', placeholder='Mensaje' rows=4 required data-error="Espacio requerido").form-control
-								.form-actions
-									button(type='submit').btn.btn-primary Enviar
-		
-				
-				div.row.col-sm-12-col-xs-12
+				div.col-md-4.col-sm-12
+					.contact-text.col-md-10.hidden-sm.hidden-xs
+						-if (home[0].descripcionForm)
+							!= home[0].descripcionForm
+				div.col-md-8.col-sm-12-col-xs-12
+					a(ref='/').logo-white
+						img(src='/images/logo_white.png' alt='condefa logo')
+					.contact-text-small.col-xs-12.col-sm-12.hidden-md
+						-if (home[0].descripcionForm)
+							!= home[0].descripcionForm
+					div.form-contact.col-md-12.col-sm-12-col-xs-12
+						form(method='post' action='http://formspree.io/andrea.zr92@gmail.com' data-toggle="validator")
+							.form-group
+								input(type='text', name='name',placeholder="Nombre" required  data-error="Espacio requerido" ).form-control
+
+								input(type='email', name='email', placeholder="Email" required data-error="Espacio requerido").form-control
+							.form-group
+								textarea(name='message', placeholder='Mensaje' rows=4 required data-error="Espacio requerido").form-control
+							.form-actions
+								button(type='submit').btn.btn-primary Enviar
+
+
+				div.col-sm-12-col-xs-12.nopadding
 					p.copy-right Copyright 2017. Corporación Nacional de Farmacia S.A Tel:(506) 2539-8181 Fax:(506) 2257-7269
-					
+
 				script(type="text/javascript").
 					var map;
 					function initMap() {
@@ -118,6 +140,4 @@ block content
 								center: {lat: 9.927128, lng: -84.082012},
 								zoom: 10
 							});
-
-
 					}
