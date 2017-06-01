@@ -5896,6 +5896,9 @@ a.logo-small {
   padding: 0 !important;
   margin: 0 !important; }
 
+.mobile {
+  display: none !important; }
+
 .navbar-default .navbar-toggle .icon-bar {
   background: #fff; }
 
@@ -6226,6 +6229,8 @@ a.logo-small {
     height: 250px; } }
 
 @media only screen and (max-width: 480px) {
+  .mobile {
+    display: block !important; }
   a.navbar-brand {
     width: 115px; }
   .navbar-default .navbar-collapse {
@@ -6286,6 +6291,8 @@ a.logo-small {
     height: 300px; } }
 
 @media only screen and (max-width: 320px) {
+  .mobile {
+    display: block !important; }
   a.navbar-brand {
     width: 115px; }
   .navbar-default .navbar-collapse {
