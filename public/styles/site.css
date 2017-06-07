@@ -5862,6 +5862,10 @@ body {
       .navbar-default .navbar-nav li:hover a {
         background: none;
         color: #ccc; }
+    .navbar-default .navbar-nav.hide-items li {
+      display: none; }
+      .navbar-default .navbar-nav.hide-items li:first-child {
+        display: block; }
 
 .navbar-default .navbar-collapse {
   position: absolute;

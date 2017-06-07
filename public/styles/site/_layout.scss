@@ -54,7 +54,16 @@ body{
 				}
 			}
 		}
+		&.hide-items{
+			li{
+				display:none;
+				&:first-child{
+					display: block;
+				}
+			}
 
+
+		}
 	}
 }
 .navbar-default .navbar-collapse{
