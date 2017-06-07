@@ -4,6 +4,7 @@ require('dotenv').config();
 
 // Require keystone
 var keystone = require('keystone');
+var moment = require('moment');
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
@@ -33,6 +34,7 @@ keystone.import('models');
 // for each request) should be added to ./routes/middleware.js
 keystone.set('locals', {
 	_: require('lodash'),
+	moment: require('moment'),
 	env: keystone.get('env'),
 	utils: keystone.utils,
 	editable: keystone.content.editable,
@@ -46,7 +48,7 @@ keystone.set('routes', require('./routes'));
 keystone.set('nav', {
 	enquiries: 'enquiries',
 	users: 'users',
-	'contenido':['homes']
+	'contenido':['homes',]
 });
 
 // Start Keystone to connect to your database and initialise the web server

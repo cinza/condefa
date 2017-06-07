@@ -15,6 +15,7 @@ var Comercio = new keystone.List('Comercio',{
 
 Comercio.add({
   title:{type:String, default:"Comercio"},
+  description:{type:String},
   imgBanner:{label:"Imagen banner:", type: Types.CloudinaryImage}
 })
 Comercio.register();
