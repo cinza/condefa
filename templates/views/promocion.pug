@@ -2,20 +2,19 @@ extends ../layouts/default
 block content
 
 	section#top-banner.commercial
-		
 		-if(comercio)
 			.bannerComercial
 				.bannerComercial-text
 					h1 #{comercio[0].title}
 					span #{comercio[0].description}
-				img(src=comercio[0].imgBanner.url alt="").img-responsive
+				img(src=comercio[0].imgBanner.url alt=comercio[0].title).img-responsive
 	section#wrapper-news
 		div.col-md-8.col-sm-12.col-xs-12.box-news-wrapper
-			-if(promocion)
-				each item in promocion
+			-if(locals.data.promoActuales)
+				each item in locals.data.promoActuales
 					.box-news
 
-						a(href=item.slug target="_blank")
+						a(href='/valores-agregados/'+item.slug target="_blank")
 							.box-news-media-wrapper.col-md-5.col-sm-5.col-xs-5.nopadding
 								- if((item.urlVideoYoutube != '')&& item.urlVideoVimeo != '')
 									.box-news-icon-play
@@ -31,12 +30,22 @@ block content
 		div.col-md-3.col-sm-12.col-xs-12.right
 			.box-old-wrapper
 				h3 PROMOCIONES ANTERIORES
-				-if(promocion)
-					each item in promocion
+				- if(locals.data.promoAntiguas != ''){
+					each item in locals.data.promoAntiguas
 						.box-old-news
 							a(href="" target="_blank")
 								.box-old-news-title
 									h4 #{item.title}
 									span  #{moment.locale('es')&&moment(item.createdAt).format("LL")} 
 								.box-old-news-content
-										!= item.description
+										p #{item.description}
+				- }else{		
+					each item in locals.data.promoActuales
+						.box-old-news
+							a(href="" target="_blank")
+								.box-old-news-title
+									h4 #{item.title}
+									span  #{moment.locale('es')&&moment(item.createdAt).format("LL")} 
+								.box-old-news-content
+										p #{item.description}
+				- }

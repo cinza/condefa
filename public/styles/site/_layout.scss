@@ -543,7 +543,7 @@ a.logo-small{
 }
 .bannerComercial-text{
 	position: absolute;
-	z-index:9;
+	z-index:1;
 	top:32%;
 	left:20%;
 	right:0;
@@ -662,6 +662,143 @@ a.logo-small{
 /*END COMMERCIAL STYLES
 /**********************/
 
+/***********************/
+/* SALUD AL DIA STYLES
+/**********************/
+#salud-wrapper{
+	nav.nav-salud{
+		overflow:hidden;
+		background:$color-green;
+		box-shadow: 0px 2px 12px #bbb;
+
+			width:100%;
+			height:50px;
+			text-transform: uppercase;
+			overflow: auto;
+			white-space: nowrap;
+
+			list-style: none;
+			margin:0;
+			padding: 0;
+			span.currentYear{
+				background:#fff;
+				color:$color-green;
+				padding: 15px 25px;
+				display: inline-block;
+				font-weight: 800;
+				font-size:15px;
+			}
+				a{
+					color:#fff;
+					display: inline-block;
+					line-height: 50px;
+					font-size: 13px;
+					font-weight: 800;
+					padding:0 20px;
+
+				}
+
+		}
+	}
+	#salud-box-wrapper{
+		margin:20px 70px;
+		.salud-box{
+			a{
+				width:100%;
+				overflow:hidden;
+				display: block;
+			}
+			margin-bottom:50px;
+			overflow: hidden;
+			width:100%;
+			.column-left-salud{
+				p.no-news{
+					margin:30px 0  0 40px;
+
+					font-size: 15px;
+					color: #bbb;
+				}
+			}
+			.column-right-salud{
+				border-top: 3px solid $color-titles;
+				color:$color-green;
+				// text-align: right;
+				h4{
+					font-size:25px;
+					font-weight: bold;
+
+				}
+				span{
+						font-weight:800;
+				}
+			}
+			.salud-preview-box{
+				&:nth-child(even){
+					border-left:1px solid $color-titles;
+					border-right: 1px solid $color-titles;
+				}
+				background:#fff;
+				height: 600px;
+				overflow:hidden;
+				.salud-preview-media{
+					width:100%;
+					height: 250px;
+
+					img{
+						height:100%;
+						width:100%;
+					}
+				}
+				.salud-preview-box-content{
+					color:$color-titles;
+					padding:20px 20px;
+					background:#fff;
+					position:relative;
+					height:350px;
+					span{
+						text-transform: uppercase;
+						font-size:12px;
+					}
+					h6{
+						text-transform: uppercase;
+						font-weight: 800;
+						font-size:20px;
+					}
+					&:after,:before{
+						bottom: 100%;
+						left: 15%;
+						border: solid transparent;
+						content: " ";
+						height: 0;
+						width: 0;
+						position: absolute;
+						pointer-events: none;
+					}
+					&:after{
+						border-color: rgba(255, 255, 255, 0);
+						border-bottom-color: #fff;
+						border-width: 10px;
+						margin-left: -10px;
+					}
+					&:before{
+						border-color: rgba(255, 255, 255, 0);
+						border-bottom-color: #fff;
+						border-width: 14px;
+						margin-left: -14px;
+					}
+					.preview-box-content-tex{
+
+						overflow:hidden;
+					}
+				}
+			}
+		}
+	}
+
+
+/***************************/
+/* END SALUD AL DIA STYLES
+/***************************/
 
 
 /***********************/
@@ -681,6 +818,7 @@ a.logo-small{
 			font-size:50px;
 		}
 	}
+
  }
 
 @media only screen and (max-width : 768px) {
@@ -720,6 +858,22 @@ a.logo-small{
 	#sub-nav a{
 		height:250px;
 	}
+	// salud al dia
+	#salud-box-wrapper{
+		margin:20px 60px;
+		.salud-box{
+			.column-right-salud{
+				border: none;
+			}
+		}
+		.column-left-salud{
+			// padding:0 !important;
+			border:none;
+			p.no-news{
+				text-align:center;
+			}
+		}
+	}
 }
 
 @media only screen and (max-width : 480px){
@@ -741,6 +895,7 @@ a.logo-small{
 		}
 		span{
 			font-size: 14px;
+
 		}
 	}
 	.box-news{
@@ -849,6 +1004,21 @@ a.logo-small{
 	#map-findus{
 		#map{
 			height:300px;
+		}
+	}
+	// salud al dia
+	#salud-box-wrapper{
+		margin:20px 0px;
+		.salud-box{
+			.column-right-salud{
+				border: none;
+				margin-bottom: 20px !important;
+				padding-left: 20px !important;
+			}
+		}
+		.column-left-salud{
+			border:none;
+			padding:0 !important;
 		}
 	}
 }
@@ -987,6 +1157,22 @@ a.logo-small{
 	#map-findus{
 		#map{
 			height:300px;
+		}
+	}
+	// salud al dia
+	#salud-box-wrapper{
+		margin:20px 0px;
+		.salud-box{
+			.column-right-salud{
+				border: none;
+				margin-bottom: 20px !important;
+				padding-left: 20px !important;
+			}
+		}
+
+		.column-left-salud{
+
+			padding:0 !important;
 		}
 	}
 }

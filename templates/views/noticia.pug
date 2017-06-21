@@ -1,0 +1,359 @@
+extends ../layouts/default
+block content
+  - var currentYear = new Date().getFullYear();
+  - var currentMonth = new Date().getMonth()+1;
+  - var monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio","Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+  section#top-banner.commercial
+    if(salud)
+    .bannerComercial
+      .bannerComercial-text
+        h1 #{salud[0].title}
+        span #{salud[0].description}
+      img(src=salud[0].imgBanner.url alt=salud[0].title)
+  section#salud-wrapper
+    nav.nav-salud
+      span.currentYear #{currentYear}
+       
+      a(href="#month-1") Enero
+       
+      a(href="#month-2") Febrero
+       
+      a(href="#month-3") Marzo
+       
+      a(href="#month-4") Abril
+       
+      a(href="#month-5") Mayo
+       
+      a(href="#month-6") Junio
+       
+      a(href="#month-7") Juo
+      a(href="#month-8") Agosto
+       
+      a(href="#month-9") Septiembre
+       
+      a(href="#month-10") Octubre
+       
+      a(href="#month-11") Noviembre
+       
+      a(href="#month-12") Diciembre
+    section#salud-box-wrapper
+      //- ENERO MES FUNCIONALIDAD
+      - if(locals.data.noticiaEn)
+        div.salud-box
+          div.column-right-salud.col-md-3.cold-sm-3.col-xs-12.nopadding
+            
+            h4#month-1 Enero
+            span #{currentYear}
+            
+          div.column-left-salud.col-md-9.col-sm-12.col-xs-12
+          
+            -if(locals.data.noticiaEn != ''){
+              each item in locals.data.noticiaEn
+                div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
+                  a(href="/salud-al-dia/"+item.slug target="_blank")
+                    .salud-preview-media
+                      //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                        .box-news-icon-play
+                      img(src=item.imgNoticia.url alt=item.title)
+                    .salud-preview-box-content
+                      span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+                      h6 #{item.title}
+                      .preview-box-content-tex
+                        p  #{item.description}
+            -}else{
+              p.no-news No hay noticias en este mes
+            -}
+            
+            
+      
+      //-  NOTICIAS FEBRERO
+      - if(locals.data.noticiaFeb)
+        div.salud-box
+          div.column-right-salud.col-md-3.cold-sm-3.col-xs-12.nopadding
+            
+            h4#month-2 Febrero
+            span #{currentYear}
+            
+          div.column-left-salud.col-md-9.col-sm-12.col-xs-12
+          
+            -if(locals.data.noticiaFeb != ''){
+              each item in locals.data.noticiaFeb
+                div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
+                  a(href="/salud-al-dia/"+item.slug target="_blank")
+                    .salud-preview-media
+                      //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                        .box-news-icon-play
+                      img(src=item.imgNoticia.url alt=item.title)
+                    .salud-preview-box-content
+                      span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+                      h6 #{item.title}
+                      .preview-box-content-tex
+                        p  #{item.description}
+            -}else{
+              p.no-news No hay noticias en este mes
+            -}
+      //  NOTICIAS MARZO
+      - if(locals.data.noticiaMar)
+        div.salud-box
+          div.column-right-salud.col-md-3.cold-sm-3.col-xs-12.nopadding
+            
+            h4#month-3 Marzo
+            span #{currentYear}
+            
+          div.column-left-salud.col-md-9.col-sm-12.col-xs-12
+          
+            -if(locals.data.noticiaMar != ''){
+              each item in locals.data.noticiaMar
+                div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
+                  a(href="/salud-al-dia/"+item.slug target="_blank")
+                    .salud-preview-media
+                      //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                        .box-news-icon-play
+                      img(src=item.imgNoticia.url alt=item.title)
+                    .salud-preview-box-content
+                      span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+                      h6 #{item.title}
+                      .preview-box-content-tex
+                        p  #{item.description}
+            -}else{
+              p.no-news No hay noticias en este mes
+            -}
+      //  NOTICIAS ABRIL
+      
+      - if(locals.data.noticiaAbr)
+        div.salud-box
+          div.column-right-salud.col-md-3.cold-sm-3.col-xs-12.nopadding
+            
+            h4#month-4 Abril
+            span #{currentYear}
+            
+          div.column-left-salud.col-md-9.col-sm-12.col-xs-12
+          
+            -if(locals.data.noticiaAbr != ''){
+              each item in locals.data.noticiaAbr
+                div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
+                  a(href="/salud-al-dia/"+item.slug target="_blank")
+                    .salud-preview-media
+                      //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                        .box-news-icon-play
+                      img(src=item.imgNoticia.url alt=item.title)
+                    .salud-preview-box-content
+                      span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+                      h6 #{item.title}
+                      .preview-box-content-tex
+                        p  #{item.description}
+            -}else{
+              p.no-news No hay noticias en este mes
+            -}
+      //  NOTICIAS Mayo
+      - if(locals.data.noticiaMay)
+        div.salud-box
+          div.column-right-salud.col-md-3.cold-sm-3.col-xs-12.nopadding
+            
+            h4#month-5 Mayo
+            span #{currentYear}
+            
+          div.column-left-salud.col-md-9.col-sm-12.col-xs-12
+          
+            -if(locals.data.noticiaMay != ''){
+              each item in locals.data.noticiaMay
+                div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
+                  a(href="/salud-al-dia/"+item.slug target="_blank")
+                    .salud-preview-media
+                      //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                        .box-news-icon-play
+                      img(src=item.imgNoticia.url alt=item.title)
+                    .salud-preview-box-content
+                      span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+                      h6 #{item.title}
+                      .preview-box-content-tex
+                        p  #{item.description}
+            -}else{
+              p.no-news No hay noticias en este mes
+            -}
+      //  NOTICIAS Junio
+      
+      - if(locals.data.noticiaJun)
+        div.salud-box
+          div.column-right-salud.col-md-3.cold-sm-3.col-xs-12.nopadding
+            
+            h4#month-6 Junio
+            span #{currentYear}
+            
+          div.column-left-salud.col-md-9.col-sm-12.col-xs-12
+          
+            -if(locals.data.noticiJun != ''){
+              each item in locals.data.noticiaJun
+                div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
+                  a(href="/salud-al-dia/"+item.slug target="_blank")
+                    .salud-preview-media
+                      //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                        .box-news-icon-play
+                      img(src=item.imgNoticia.url alt=item.title)
+                    .salud-preview-box-content
+                      span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+                      h6 #{item.title}
+                      .preview-box-content-tex
+                        p  #{item.description}
+            -}else{
+              p.no-news No hay noticias en este mes
+            -}
+      //  NOTICIAS Julio
+      
+      - if(locals.data.noticiaJul)
+        div.salud-box
+          div.column-right-salud.col-md-3.cold-sm-3.col-xs-12.nopadding
+            
+            h4#month-7 Julio
+            span #{currentYear}
+            
+          div.column-left-salud.col-md-9.col-sm-12.col-xs-12
+          
+            -if(locals.data.noticiaJul != ''){
+              each item in locals.data.noticiaJul
+                div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
+                  a(href="/salud-al-dia/"+item.slug target="_blank")
+                    .salud-preview-media
+                      //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                        .box-news-icon-play
+                      img(src=item.imgNoticia.url alt=item.title)
+                    .salud-preview-box-content
+                      span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+                      h6 #{item.title}
+                      .preview-box-content-tex
+                        p  #{item.description}
+            -}else{
+              p.no-news No hay noticias en este mes
+            -}
+      //  NOTICIAS Agosto
+      
+      - if(locals.data.noticiaAgo)
+        div.salud-box
+          div.column-right-salud.col-md-3.cold-sm-3.col-xs-12.nopadding
+            
+            h4#month-8 Agosto
+            span #{currentYear}
+            
+          div.column-left-salud.col-md-9.col-sm-12.col-xs-12
+          
+            -if(locals.data.noticiaAgo != ''){
+              each item in locals.data.noticiaAgo
+                div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
+                  a(href="/salud-al-dia/"+item.slug+item.slug target="_blank")
+                    .salud-preview-media
+                      //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                        .box-news-icon-play
+                      img(src=item.imgNoticia.url alt=item.title)
+                    .salud-preview-box-content
+                      span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+                      h6 #{item.title}
+                      .preview-box-content-tex
+                        p  #{item.description}
+            -}else{
+              p.no-news No hay noticias en este mes
+            -}
+      
+      //  Noticias Septiembre
+      - if(locals.data.noticiaSept)
+        div.salud-box
+          div.column-right-salud.col-md-3.cold-sm-3.col-xs-12.nopadding
+            
+            h4#month-9 Septiembre
+            span #{currentYear}
+            
+          div.column-left-salud.col-md-9.col-sm-12.col-xs-12
+          
+            -if(locals.data.noticiaSept != ''){
+              each item in locals.data.noticiaSept
+                div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
+                  a(href='/salud-al-dia/'+item.slug target="_blank")
+                    .salud-preview-media
+                      //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                        .box-news-icon-play
+                      img(src=item.imgNoticia.url alt=item.title)
+                    .salud-preview-box-content
+                      span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+                      h6 #{item.title}
+                      .preview-box-content-tex
+                        p  #{item.description}
+            -}else{
+              p.no-news No hay noticias en este mes
+            -}
+      //  NOTICIAS Octubre
+      - if(locals.data.noticiaSept)
+        div.salud-box
+          div.column-right-salud.col-md-3.cold-sm-3.col-xs-12.nopadding
+            
+            h4#month-10 Septiembre
+            span #{currentYear}
+            
+          div.column-left-salud.col-md-9.col-sm-12.col-xs-12
+          
+            -if(locals.data.noticiaSept != ''){
+              each item in locals.data.noticiaSept
+                div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
+                  a(href="/salud-al-dia/"+item.slug+item.slug target="_blank")
+                    .salud-preview-media
+                      //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                        .box-news-icon-play
+                      img(src=item.imgNoticia.url alt=item.title)
+                    .salud-preview-box-content
+                      span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+                      h6 #{item.title}
+                      .preview-box-content-tex
+                        p  #{item.description}
+            -}else{
+              p.no-news No hay noticias en este mes
+            -}
+      //  NOTICIAS Noviembre
+      - if(locals.data.noticiaNov)
+        div.salud-box
+          div.column-right-salud.col-md-3.cold-sm-3.col-xs-12.nopadding
+          
+            h4#month-11 Noviembre
+            span #{currentYear}
+            
+          div.column-left-salud.col-md-9.col-sm-12.col-xs-12
+          
+            -if(locals.data.noticiaNov != ''){
+              each item in locals.data.noticiaNov
+                div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
+                  a(href="/salud-al-dia/"+item.slug+item.slug target="_blank")
+                    .salud-preview-media
+                      //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                        .box-news-icon-play
+                      img(src=item.imgNoticia.url alt=item.title)
+                    .salud-preview-box-content
+                      span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+                      h6 #{item.title}
+                      .preview-box-content-tex
+                        p  #{item.description}
+            -}else{
+              p.no-news No hay noticias en este mes
+            -}
+      //  NOTICIAS Diciembre  
+      - if(locals.data.noticiaDic)
+        div.salud-box
+          div.column-right-salud.col-md-3.cold-sm-3.col-xs-12.nopadding
+            h4#month-12 Diciembre
+            span #{currentYear}
+            
+          div.column-left-salud.col-md-9.col-sm-12.col-xs-12
+          
+            -if(locals.data.noticiaDic != ''){
+              each item in locals.data.noticiaDic
+                div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
+                  a(href="/salud-al-dia/"+item.slug+item.slug target="_blank")
+                    .salud-preview-media
+                      //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                        .box-news-icon-play
+                      img(src=item.imgNoticia.url alt=item.title)
+                    .salud-preview-box-content
+                      span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+                      h6 #{item.title}
+                      .preview-box-content-tex
+                        p  #{item.description}
+            -}else{
+              p.no-news No hay noticias en este mes
+            -}

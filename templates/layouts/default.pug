@@ -57,7 +57,7 @@ html
 					.collapse.navbar-collapse
 						a.logo-small.hidden-md.hidden-xl(hre="/")
 							img(src="/images/logo_white_small.png" alt="condefa logo")
-						- if(promocion)
+						- if(comercio)
 							ul.nav.navbar-nav.navbar-right.hide-items
 								each link in navLinks
 									li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label

@@ -6231,7 +6231,7 @@ a.logo-small {
 
 .bannerComercial-text {
   position: absolute;
-  z-index: 9;
+  z-index: 1;
   top: 32%;
   left: 20%;
   right: 0;
@@ -6319,6 +6319,109 @@ a.logo-small {
 /*END COMMERCIAL STYLES
 /**********************/
 /***********************/
+/* SALUD AL DIA STYLES
+/**********************/
+#salud-wrapper nav.nav-salud {
+  overflow: hidden;
+  background: #3EB24F;
+  box-shadow: 0px 2px 12px #bbb;
+  width: 100%;
+  height: 50px;
+  text-transform: uppercase;
+  overflow: auto;
+  white-space: nowrap;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  #salud-wrapper nav.nav-salud span.currentYear {
+    background: #fff;
+    color: #3EB24F;
+    padding: 15px 25px;
+    display: inline-block;
+    font-weight: 800;
+    font-size: 15px; }
+  #salud-wrapper nav.nav-salud a {
+    color: #fff;
+    display: inline-block;
+    line-height: 50px;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 0 20px; }
+
+#salud-box-wrapper {
+  margin: 20px 70px; }
+  #salud-box-wrapper .salud-box {
+    margin-bottom: 50px;
+    overflow: hidden;
+    width: 100%; }
+    #salud-box-wrapper .salud-box a {
+      width: 100%;
+      overflow: hidden;
+      display: block; }
+    #salud-box-wrapper .salud-box .column-left-salud p.no-news {
+      margin: 30px 0  0 40px;
+      font-size: 15px;
+      color: #bbb; }
+    #salud-box-wrapper .salud-box .column-right-salud {
+      border-top: 3px solid #254a94;
+      color: #3EB24F; }
+      #salud-box-wrapper .salud-box .column-right-salud h4 {
+        font-size: 25px;
+        font-weight: bold; }
+      #salud-box-wrapper .salud-box .column-right-salud span {
+        font-weight: 800; }
+    #salud-box-wrapper .salud-box .salud-preview-box {
+      background: #fff;
+      height: 600px;
+      overflow: hidden; }
+      #salud-box-wrapper .salud-box .salud-preview-box:nth-child(even) {
+        border-left: 1px solid #254a94;
+        border-right: 1px solid #254a94; }
+      #salud-box-wrapper .salud-box .salud-preview-box .salud-preview-media {
+        width: 100%;
+        height: 250px; }
+        #salud-box-wrapper .salud-box .salud-preview-box .salud-preview-media img {
+          height: 100%;
+          width: 100%; }
+      #salud-box-wrapper .salud-box .salud-preview-box .salud-preview-box-content {
+        color: #254a94;
+        padding: 20px 20px;
+        background: #fff;
+        position: relative;
+        height: 350px; }
+        #salud-box-wrapper .salud-box .salud-preview-box .salud-preview-box-content span {
+          text-transform: uppercase;
+          font-size: 12px; }
+        #salud-box-wrapper .salud-box .salud-preview-box .salud-preview-box-content h6 {
+          text-transform: uppercase;
+          font-weight: 800;
+          font-size: 20px; }
+        #salud-box-wrapper .salud-box .salud-preview-box .salud-preview-box-content:after, #salud-box-wrapper .salud-box .salud-preview-box .salud-preview-box-content :before {
+          bottom: 100%;
+          left: 15%;
+          border: solid transparent;
+          content: " ";
+          height: 0;
+          width: 0;
+          position: absolute;
+          pointer-events: none; }
+        #salud-box-wrapper .salud-box .salud-preview-box .salud-preview-box-content:after {
+          border-color: rgba(255, 255, 255, 0);
+          border-bottom-color: #fff;
+          border-width: 10px;
+          margin-left: -10px; }
+        #salud-box-wrapper .salud-box .salud-preview-box .salud-preview-box-content:before {
+          border-color: rgba(255, 255, 255, 0);
+          border-bottom-color: #fff;
+          border-width: 14px;
+          margin-left: -14px; }
+        #salud-box-wrapper .salud-box .salud-preview-box .salud-preview-box-content .preview-box-content-tex {
+          overflow: hidden; }
+
+/***************************/
+/* END SALUD AL DIA STYLES
+/***************************/
+/***********************/
 /* Media Query fixes
 /**********************/
 @media only screen and (max-width: 992px) {
@@ -6349,7 +6452,15 @@ a.logo-small {
   #map-findus #map {
     height: 300px; }
   #sub-nav a {
-    height: 250px; } }
+    height: 250px; }
+  #salud-box-wrapper {
+    margin: 20px 60px; }
+    #salud-box-wrapper .salud-box .column-right-salud {
+      border: none; }
+    #salud-box-wrapper .column-left-salud {
+      border: none; }
+      #salud-box-wrapper .column-left-salud p.no-news {
+        text-align: center; } }
 
 @media only screen and (max-width: 480px) {
   .box-news {
@@ -6437,7 +6548,16 @@ a.logo-small {
           text-decoration: underline;
           font-weight: bold; }
   #map-findus #map {
-    height: 300px; } }
+    height: 300px; }
+  #salud-box-wrapper {
+    margin: 20px 0px; }
+    #salud-box-wrapper .salud-box .column-right-salud {
+      border: none;
+      margin-bottom: 20px !important;
+      padding-left: 20px !important; }
+    #salud-box-wrapper .column-left-salud {
+      border: none;
+      padding: 0 !important; } }
 
 @media only screen and (max-width: 320px) {
   .box-news {
@@ -6530,4 +6650,12 @@ a.logo-small {
           text-decoration: underline;
           font-weight: bold; }
   #map-findus #map {
-    height: 300px; } }
+    height: 300px; }
+  #salud-box-wrapper {
+    margin: 20px 0px; }
+    #salud-box-wrapper .salud-box .column-right-salud {
+      border: none;
+      margin-bottom: 20px !important;
+      padding-left: 20px !important; }
+    #salud-box-wrapper .column-left-salud {
+      padding: 0 !important; } }

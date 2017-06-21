@@ -2,20 +2,20 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 /**
- * Comercio model
+ * Salud al dia model
  * ==========
  */
 
-var Comercio = new keystone.List('Comercio',{
-  singular:"Comercio",
-  plural:"Comercio",
+var Salud = new keystone.List('Salud',{
+  singular:"Salud",
+  plural:"Saluds",
   autokey: {path:"slug", from: "title", unique: true},
   map:{name:"title"}
 });
 
-Comercio.add({
-  title:{type:String, default:"Comercio"},
+Salud.add({
+  title:{type:String, default:"Salud al día"},
   description:{label:'Descripcion:',type:String},
   imgBanner:{label:"Imagen banner:", type: Types.CloudinaryImage}
 })
-Comercio.register();
+Salud.register();

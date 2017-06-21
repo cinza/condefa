@@ -6,21 +6,21 @@ var Types = keystone.Field.Types;
  * ==========
  */
 
-var Promocion = new keystone.List('Promocion',{
-  singular:"Promo",
-  plural:"Promo",
+var Noticia = new keystone.List('Noticia',{
+  singular:"Noticia",
+  plural:"Noticias",
   autokey: {path:"slug", from: "title", unique: true},
   map:{name:'title'}
 });
 
 var currentMonth = new Date;
-currentMonth = currentMonth.getMonth();
+currentMonth = currentMonth.getMonth()+1;
 var currentYear = new Date;
 currentYear = currentYear.getFullYear();
 
-Promocion.add({
-  title:{label:"Nombre Promocion", type:String, default:"Promocion"},
-  imgPromo:{label:"Imagen de noticia", type: Types.CloudinaryImage, required: true, default:""},
+Noticia.add({
+  title:{label:"Nombre Noticia", type:String, default:"Noticia"},
+  imgNoticia:{label:"Imagen de noticia", type: Types.CloudinaryImage, required: true, default:""},
   urlVideoYoutube:{label:"URL video de Youtube", type:String},
   urlVideoVimeo:{label:"URL video de Vimmeo", type:String},
   description:{label:"Descripción, máximo 100 caracteres", type:Types.Text, max: 100},
@@ -31,6 +31,6 @@ Promocion.add({
   year:{type:Types.Number, default:currentYear, noedit:true, hidden:true}
 })
 
-Promocion.defaultColumns = 'title, category, createdAt'
+Noticia.defaultColumns = 'title, category, createdAt'
 
-Promocion.register();
+Noticia.register();
