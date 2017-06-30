@@ -15,7 +15,8 @@ exports = module.exports = function (req, res) {
 	locals.section = 'comercio';
 	locals.data = {
 		promoActuales:[],
-		promoAntiguas:[]
+		promoAntiguas:[],
+		category:"Valores Agregados"
 	}
 
 	view.query('comercio', keystone.list('Comercio').model.find());

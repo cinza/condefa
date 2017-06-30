@@ -1,4 +1,68 @@
 extends ../layouts/default
-block content
 
-  #{locals.data.promo}
+block content
+  - var currentYear = new Date().getFullYear();
+  - var currentMonth = new Date().getMonth();
+  - var monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio","Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+  #content-detail-wrapper
+    .column-left.col-md-9.col-sm-8.col-xs-12
+      .content-detail
+        if(locals.data.promo != '')
+          h2 #{locals.data.promo.title}
+          h6 #{moment.locale('es')&&moment(locals.data.promo.createdAt).format("LL")}
+          
+          .social-wrapper
+            <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox"></div>
+          //- if()
+          img(src=locals.data.promo.imgPromoFull.url alt=locals.data.promo.title )
+          
+          .content-detail-text
+            != locals.data.promo.content
+      .content-more-news-wrapper
+        h4 Más noticias
+        -if(locals.data.promosRelacionadas != ''){
+          each item in locals.data.promosRelacionadas
+            .box-content-more-news.hidden-xs
+              .box-content-more-left
+                img(src=item.imgPromo.url alt="") 
+              .box-content-more-right
+                a(href="/salud-al-dia/"+item.slug target="_blank")
+                  h4 #{item.title}
+                  span #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+            
+            .box-content-more-news.hidden-md.hidden-xl.hidden-sm.col-xs-6.show
+              .box-content-more-left
+                img(src=item.imgPromo.url alt="") 
+              .box-content-more-right
+                a(href="/salud-al-dia/"+item.slug target="_blank")
+                  h4 #{item.title}
+                  span #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+
+        -}else{
+          p.no-news No hay más noticas relacionadas
+        -}
+        
+          
+    .colum-right.col-md-3.col-sm-4.hidden-xs
+      .colum-right-wrapper
+        h5 #{monthNames[currentMonth]}
+        span #{currentYear}
+        -if(locals.data.promosMes != ''){
+          each item in locals.data.promosMes
+            .box-monthly-content
+              .box-monthly-media
+                img(src=item.imgPromo.url alt="")
+              .box-monthly-text
+                a(href="/salud-al-dia/"+item.slug target="_blank")
+                  span #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+                  h6 #{item.title}
+                  p #{item.description}
+            
+        -} else{
+          p.no-news No hay más noticias en este mes
+        -}
+        
+
+
+  

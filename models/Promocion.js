@@ -20,7 +20,8 @@ currentYear = currentYear.getFullYear();
 
 Promocion.add({
   title:{label:"Nombre Promocion", type:String, default:"Promocion"},
-  imgPromo:{label:"Imagen de noticia", type: Types.CloudinaryImage, required: true, default:""},
+  imgPromo:{label:"Imagen de noticia thumbail:", type: Types.CloudinaryImage, required: true, default:""},
+  imgPromoFull:{label:"Imagen de noticia tamaño completo:", type: Types.CloudinaryImage, required:true, default:""},
   urlVideoYoutube:{label:"URL video de Youtube", type:String},
   urlVideoVimeo:{label:"URL video de Vimmeo", type:String},
   description:{label:"Descripción, máximo 100 caracteres", type:Types.Text, max: 100},
