@@ -42,7 +42,7 @@ block content
 							p Promociones. Beneficios. Comodidad
 
 				div.col-md-4.col-sm-12.col-xs-12.nopadding
-					a(href="/")
+					a(href="/salud-al-dia")
 						- if (home[0].bannerNewsImg.url)
 								img(src=home[0].bannerNewsImg.url alt="noticias").img-responsive
 						div.title
@@ -87,7 +87,7 @@ block content
 								!= home[0].purposes
 			section#map-findus.col-md-12.nopadding
 				h4.title-map ENCUENTRE SU </br> FARMACIA
-				.col-md-4.nopadding#map-content.hidden-sm.hidden-xs
+				.col-md-4.nopadding#map-content.hidden-xs
 					.content-location-top
 						.location-img
 						.location-title
@@ -109,7 +109,7 @@ block content
 					#map
 			section#contact
 				div.col-md-4.col-sm-12
-					.contact-text.col-md-10.hidden-sm.hidden-xs
+					.contact-text.col-md-10.hidden-xs
 						-if (home[0].descripcionForm)
 							!= home[0].descripcionForm
 				div.col-md-8.col-sm-12-col-xs-12
@@ -119,7 +119,7 @@ block content
 						-if (home[0].descripcionForm)
 							!= home[0].descripcionForm
 					div.form-contact.col-md-12.col-sm-12-col-xs-12
-						form(method='post' action='http://formspree.io/andrea.zr92@gmail.com' data-toggle="validator")
+						form(method='post' action='http://formspree.io/info@farmaciascondefa.com' data-toggle="validator")
 							.form-group
 								input(type='text', name='name',placeholder="Nombre" required  data-error="Espacio requerido" ).form-control
 

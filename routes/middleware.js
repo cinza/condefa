@@ -20,10 +20,10 @@ var _ = require('lodash');
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
 		{ label: 'Inicio', key: 'home', href: '/' },
-		{ label: 'Quienes somos', key: 'contact', href: '/' },
-		{ label: 'Farmacias', key:'farmacy' , href:'/'},
-		{label: 'Contacto', key:'contact', href:'/'},
-		{label:'Condefa Online', key:'online', href:'/'}
+		{ label: 'Quienes somos', key: 'contact', href: '#about' },
+		{ label: 'Farmacias', key:'farmacy' , href:'#map-findus'},
+		{label: 'Contacto', key:'contact', href:'#contact'},
+		{label:'Condefa Online', key:'online', href:'http://ce.farmaciascondefa.com/co/login/inicio.aspx'}
 	];
 	res.locals.user = req.user;
 	next();
