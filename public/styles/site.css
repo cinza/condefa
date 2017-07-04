@@ -6350,6 +6350,9 @@ a.logo-small {
     font-size: 13px;
     font-weight: 800;
     padding: 0 20px; }
+    #salud-wrapper nav.nav-salud a.inactive {
+      color: #bbb;
+      cursor: default; }
 
 #salud-box-wrapper {
   margin: 20px 70px; }
