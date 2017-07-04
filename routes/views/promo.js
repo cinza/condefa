@@ -36,8 +36,9 @@ exports = module.exports = function (req, res) {
 
   view.on('init', function(next){
     var q = keystone.list('Promocion').model.find({
-      category: locals.filters.category
-    }).limit(3);
+      category: locals.filters.category,
+			slug : {$ne: locals.filters.promo}
+    }).limit(4);
 
     q.exec(function(err, result){
       locals.data.promosRelacionadas = result;
@@ -48,8 +49,9 @@ exports = module.exports = function (req, res) {
 
   view.on('init', function(next){
     var q = keystone.list('Promocion').model.find({
-      month: locals.filters.month
-    }).limit(3);
+      month: locals.filters.month,
+			slug : {$ne: locals.filters.promo}
+    }).limit(4);
 
     q.exec(function(err, result){
       locals.data.promosMes = result;

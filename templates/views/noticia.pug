@@ -10,7 +10,7 @@ block content
       .bannerComercial-text
         h1 #{salud[0].title}
         span #{salud[0].description}
-      img(src=salud[0].imgBanner.url alt=salud[0].title)
+      img(src=salud[0].imgBanner.secure_url alt=salud[0].title)
   section#salud-wrapper
     nav.nav-salud
       span.currentYear #{currentYear}
@@ -56,7 +56,7 @@ block content
                     .salud-preview-media
                       //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
                         .box-news-icon-play
-                      img(src=item.imgPromo.url alt=item.title)
+                      img(src=item.imgPromo.secure_url alt=item.title)
                     .salud-preview-box-content
                       span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
                       h6 #{item.title}
@@ -85,7 +85,7 @@ block content
                     .salud-preview-media
                       //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
                         .box-news-icon-play
-                      img(src=item.imgPromo.url alt=item.title)
+                      img(src=item.imgPromo.secure_url alt=item.title)
                     .salud-preview-box-content
                       span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
                       h6 #{item.title}
@@ -111,7 +111,7 @@ block content
                     .salud-preview-media
                       //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
                         .box-news-icon-play
-                      img(src=item.imgPromo.url alt=item.title)
+                      img(src=item.imgPromo.secure_url alt=item.title)
                     .salud-preview-box-content
                       span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
                       h6 #{item.title}
@@ -138,7 +138,7 @@ block content
                     .salud-preview-media
                       //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
                         .box-news-icon-play
-                      img(src=item.imgPromo.url alt=item.title)
+                      img(src=item.imgPromo.secure_url alt=item.title)
                     .salud-preview-box-content
                       span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
                       h6 #{item.title}
@@ -164,7 +164,7 @@ block content
                     .salud-preview-media
                       //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
                         .box-news-icon-play
-                      img(src=item.imgPromo.url alt=item.title)
+                      img(src=item.imgPromo.secure_url alt=item.title)
                     .salud-preview-box-content
                       span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
                       h6 #{item.title}
@@ -191,7 +191,7 @@ block content
                     .salud-preview-media
                       //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
                         .box-news-icon-play
-                      img(src=item.imgPromo.url alt=item.title)
+                      img(src=item.imgPromo.secure_url alt=item.title)
                     .salud-preview-box-content
                       span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
                       h6 #{item.title}
@@ -218,7 +218,7 @@ block content
                     .salud-preview-media
                       //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
                         .box-news-icon-play
-                      img(src=item.imgPromo.url alt=item.title)
+                      img(src=item.imgPromo.secure_url alt=item.title)
                     .salud-preview-box-content
                       span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
                       h6 #{item.title}
@@ -245,7 +245,7 @@ block content
                     .salud-preview-media
                       //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
                         .box-news-icon-play
-                      img(src=item.imgPromo.url alt=item.title)
+                      img(src=item.imgPromo.secure_url alt=item.title)
                     .salud-preview-box-content
                       span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
                       h6 #{item.title}
@@ -272,7 +272,7 @@ block content
                     .salud-preview-media
                       //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
                         .box-news-icon-play
-                      img(src=item.imgPromo.url alt=item.title)
+                      img(src=item.imgPromo.secure_url alt=item.title)
                     .salud-preview-box-content
                       span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
                       h6 #{item.title}
@@ -298,7 +298,7 @@ block content
                     .salud-preview-media
                       //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
                         .box-news-icon-play
-                      img(src=item.imgPromo.url alt=item.title)
+                      img(src=item.imgPromo.secure_url alt=item.title)
                     .salud-preview-box-content
                       span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
                       h6 #{item.title}
@@ -324,7 +324,7 @@ block content
                     .salud-preview-media
                       //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
                         .box-news-icon-play
-                      img(src=item.imgPromo.url alt=item.title)
+                      img(src=item.imgPromo.secure_url alt=item.title)
                     .salud-preview-box-content
                       span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
                       h6 #{item.title}
@@ -349,7 +349,7 @@ block content
                     .salud-preview-media
                       //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
                         .box-news-icon-play
-                      img(src=item.imgPromo.url alt=item.title)
+                      img(src=item.imgPromo.secure_url alt=item.title)
                     .salud-preview-box-content
                       span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
                       h6 #{item.title}

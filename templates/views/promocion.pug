@@ -7,7 +7,7 @@ block content
 				.bannerComercial-text
 					h1 #{comercio[0].title}
 					span #{comercio[0].description}
-				img(src=comercio[0].imgBanner.url alt=comercio[0].title).img-responsive
+				img(src=comercio[0].imgBanner.secure_url alt=comercio[0].title).img-responsive
 	section#wrapper-news
 		div.col-md-8.col-sm-12.col-xs-12.box-news-wrapper
 			-if(locals.data.promoActuales)
@@ -18,7 +18,7 @@ block content
 							.box-news-media-wrapper.col-md-5.col-sm-5.col-xs-5.nopadding
 								- if((item.urlVideoYoutube != '')&& item.urlVideoVimeo != '')
 									.box-news-icon-play
-								img(src=item.imgPromo.url alt=item.title).img-responsive
+								img(src=item.imgPromo.secure_url alt=item.title).img-responsive
 							.box-news-content.col-md-7.col-sm-7.col-xs-7.nopadding
 								.box-news-top
 									h3 #{item.title}
