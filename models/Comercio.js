@@ -9,6 +9,7 @@ var Types = keystone.Field.Types;
 var Comercio = new keystone.List('Comercio',{
   singular:"Comercio",
   plural:"Comercio",
+  label:"Valores Agregados",
   autokey: {path:"slug", from: "title", unique: true},
   map:{name:"title"}
 });

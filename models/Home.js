@@ -10,6 +10,7 @@ var Home = new keystone.List('Home',{
   nocreate: true,
   singular:"Home",
   plural:"Home",
+  label:"Inicio",
   autokey: {path:"slug", from: "title", unique: true},
   map:{name:'title'}
 });

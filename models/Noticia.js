@@ -8,7 +8,8 @@ var Types = keystone.Field.Types;
 
 var Noticia = new keystone.List('Noticia',{
   singular:"Noticia",
-  plural:"Noticias",
+  plural:"Noticia",
+  label:"Noticias Salud",
   autokey: {path:"slug", from: "title", unique: true},
   map:{name:'title'}
 });

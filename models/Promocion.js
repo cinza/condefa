@@ -7,8 +7,9 @@ var Types = keystone.Field.Types;
  */
 
 var Promocion = new keystone.List('Promocion',{
-  singular:"Promo",
-  plural:"Promo",
+  singular:"Promocion",
+  plural:"Promocion",
+  label:"Noticia Valores Agregados",
   autokey: {path:"slug", from: "title", unique: true},
   map:{name:'title'}
 });
