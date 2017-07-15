@@ -1,0 +1,118 @@
+extends ../layouts/default
+block content
+	- var currentPage = parseInt(locals.data.planPaciente.currentPage);
+	- var nextPage = currentPage+1;
+	- var previousPage = currentPage-1;
+	section#top-banner.commercial
+		-if(plan != '')
+			.bannerComercial
+				.bannerComercial-text
+					h1 #{plan[0].title}
+					span #{plan[0].description}
+				img(src=plan[0].imgBanner.secure_url alt=plan[0].title).img-responsive
+	//- SECTION CONTENT PLAN
+	section#wrapper-plan
+		.col-first.col-plan.short
+			.col-md-6.nopadding.col-sm-6.col-xs-12
+				.col-md-6.nopadding.col-sm-6.col-xs-12
+					-if(locals.data.planPaciente.results[0])
+						.news-plan-box
+							img(src=locals.data.planPaciente.results[0].imgPromo.secure_url alt=locals.data.planPaciente.results[0].title).img-responsive
+							.title
+								h4 #{locals.data.planPaciente.results[0].title}
+							a(href="/plan-paciente/"+locals.data.planPaciente.results[0].slug target="_blank")  <i class="fa fa-arrow-circle-o-right fa-lg" aria-hidden="true"></i> VER MÁS
+				.col-md-6.nopadding.col-sm-6.col-xs-12
+					-if(locals.data.planPaciente.results[1])
+						.news-plan-box
+							img(src=locals.data.planPaciente.results[1].imgPromo.secure_url alt=locals.data.planPaciente.results[1].title).img-responsive
+							.title
+								h4 #{locals.data.planPaciente.results[1].title}
+							a(href="/plan-paciente/"+locals.data.planPaciente.results[1].slug target="_blank")  <i class="fa fa-arrow-circle-o-right fa-lg" aria-hidden="true"></i> VER MÁS
+				
+			.col-md-6.nopadding.col-sm-6.col-xs-12
+				.col-md-6.nopadding.right.col-sm-6.col-xs-12
+					.news-plan-box
+						-if(locals.data.planPaciente.results[2])
+							.news-plan-box
+								img(src=locals.data.planPaciente.results[2].imgPromo.secure_url alt=locals.data.planPaciente.results[2].title).img-responsive
+								.title
+									h4 #{locals.data.planPaciente.results[2].title}
+								a(href="/plan-paciente/"+locals.data.planPaciente.results[2].slug target="_blank")  <i class="fa fa-arrow-circle-o-right fa-lg" aria-hidden="true"></i> VER MÁS
+		.col-plan
+			.col-md-6.nopadding.col-sm-6.col-xs-12
+			.col-md-6.nopadding.col-sm-6.col-xs-12
+				.col-md-6.nopadding.col-sm-6.col-xs-12
+					-if(locals.data.planPaciente.results[3])
+						.news-plan-box.big
+							img(src=locals.data.planPaciente.results[3].imgPromo.secure_url alt=locals.data.planPaciente.results[3].title).img-responsive
+							.title
+								h4 #{locals.data.planPaciente.results[3].title}
+							a(href="/plan-paciente/"+locals.data.planPaciente.results[3].slug target="_blank")  <i class="fa fa-arrow-circle-o-right fa-lg" aria-hidden="true"></i> VER MÁS
+		.col-second.col-plan
+			.col-md-6.nopadding.col-sm-6.col-xs-12
+				.col-md-6.nopadding.right.col-sm-6.col-xs-12
+					-if(locals.data.planPaciente.results[4])
+						.news-plan-box.white
+							img(src=locals.data.planPaciente.results[4].imgPromo.secure_url alt=locals.data.planPaciente.results[4].title).img-responsive
+							.title
+								h4 #{locals.data.planPaciente.results[4].title}
+							a(href="/plan-paciente/"+locals.data.planPaciente.results[4].slug target="_blank")  <i class="fa fa-arrow-circle-o-right fa-lg" aria-hidden="true"></i> VER MÁS
+			.col-md-6.nopadding.col-sm-6.col-xs-12
+				.col-md-6.nopadding.col-sm-6.col-xs-12
+					-if(locals.data.planPaciente.results[5])
+						.news-plan-box.big
+							img(src=locals.data.planPaciente.results[5].imgPromo.secure_url alt=locals.data.planPaciente.results[5].title).img-responsive
+							.title
+								h4 #{locals.data.planPaciente.results[5].title}
+							a(href="/plan-paciente/"+locals.data.planPaciente.results[5].slug target="_blank")  <i class="fa fa-arrow-circle-o-right fa-lg" aria-hidden="true"></i> VER MÁS
+				.col-md-6.nopadding.bottom-right.col-sm-6.col-xs-12
+					if(locals.data.planPaciente.results[6])
+						.news-plan-box.white.no-img
+							.title
+								h4 #{locals.data.planPaciente.results[6].title}
+							a(href="/plan-paciente/"+locals.data.planPaciente.results[6].slug target="_blank")  <i class="fa fa-arrow-circle-o-right fa-lg" aria-hidden="true"></i> VER MÁS
+		
+		.col-third.col-plan
+			.col-md-6.nopadding.col-sm-6.col-xs-12
+				.col-md-6.nopadding.col-sm-6.col-xs-12
+					if(locals.data.planPaciente.results[7])
+						.news-plan-box.green.bottom.no-img-white
+							.title
+								h4 #{locals.data.planPaciente.results[7].title}
+							a(href="/plan-paciente/"+locals.data.planPaciente.results[7].slug target="_blank")  <i class="fa fa-arrow-circle-o-right fa-lg" aria-hidden="true"></i> VER MÁS
+				
+			.col-md-6.nopadding.col-sm-6.col-xs-12
+				.col-md-6.nopadding.right.col-sm-6.col-xs-12
+					if(locals.data.planPaciente.results[8])
+						.news-plan-box.white.bottom
+							img(src=locals.data.planPaciente.results[8].imgPromo.secure_url alt=locals.data.planPaciente.results[8].title).img-responsive
+							.title
+								h4 #{locals.data.planPaciente.results[8].title}
+							a(href="/plan-paciente/"+locals.data.planPaciente.results[8].slug target="_blank")  <i class="fa fa-arrow-circle-o-right fa-lg" aria-hidden="true"></i> VER MÁS
+		.col-plan.pages-nav
+			if(locals.data.planPaciente.previous)
+				a(href="?page="+previousPage).previous  Anterior <i class="fa fa-arrow-left" aria-hidden="true"></i>
+			if(locals.data.planPaciente.next)
+				a(href="?page="+nextPage).next Siguiente 
+					<i class="fa fa-arrow-right" aria-hidden="true"></i> 
+		//- .col-fourth.col-plan
+		//- 	.col-md-6.nopadding
+		//- 	if(locals.data.planPaciente.results[7])
+		//- 		.news-plan-box.green
+		//- 			img(src=locals.data.planPaciente.results[7].imgPromo.secure_url alt=locals.data.planPaciente.results[7].title).img-responsive
+		//- 			.title
+		//- 				h4 #{locals.data.planPaciente.results[7].title}
+		//- 			a(href="/plan-paciente/"+item.slug+item.slug target="_blank")  <i class="fa fa-arrow-circle-o-right fa-lg" aria-hidden="true"></i> VER MÁS
+		//- 	.col-md-6.nopadding
+		//- 	if(locals.data.planPaciente.results[8])
+		//- 		.news-plan-box.green.last
+		//- 			img(src=locals.data.planPaciente.results[8].imgPromo.secure_url alt=locals.data.planPaciente.results[8].title).img-responsive
+		//- 			.title
+		//- 				h4 #{locals.data.planPaciente.results[8].title}
+		//- 			a(href="/plan-paciente/"+item.slug+item.slug target="_blank")  <i class="fa fa-arrow-circle-o-right fa-lg" aria-hidden="true"></i> VER MÁS
+		//- .col-pagination
+		//- 	-if(locals.data.planPaciente.currentPage > 1)
+		//- 		a(href="?page="+locals.data.planPaciente.currentPage - 1) <<
+		//- 	-if(locals.data.planPaciente.next)
+		//- 		a(href="?page="+locals.data.planPaciente.currentPage - 1) >>
+		//- 		

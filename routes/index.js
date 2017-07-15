@@ -40,6 +40,8 @@ exports = module.exports = function (app) {
 	app.get('/salud-al-dia', routes.views.noticia);
 	app.get('/salud-al-dia/:promo', routes.views.noticiaDetalle);
 
+	app.get('/plan-paciente', routes.views.planPaciente);
+	app.get('/plan-paciente/:promo', routes.views.planPacienteDetalle);
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 

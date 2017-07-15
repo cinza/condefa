@@ -4,7 +4,7 @@ exports = module.exports = function (req, res) {
 
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
-	var currentMonth = new Date().getMonth();
+	var currentMonth = new Date().getMonth()+1;
 	var currentYear = new Date().getFullYear();
 
 	var start = new Date(currentYear, currentMonth, 1);

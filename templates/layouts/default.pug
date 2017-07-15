@@ -35,6 +35,7 @@ html
 		block head
 
 	//- HTML BODY
+
 	body
 
 		//- HEADER
@@ -84,7 +85,7 @@ html
 									each link in navLinks
 										li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
 
-				//- BODY
+		
 		#body
 
 			//- NOTE:
@@ -115,6 +116,7 @@ html
 		script(src='/js/home.js')
 		script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDvS6Wu84nQOnXGRqoE4u9uQB07XOEQZFA&callback=initMap' async defer)
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js')
+		script(src='https://use.fontawesome.com/165744ea51.js')
 		//- script(src='http://momentjs.com/downloads/moment.js')
 		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
 		//- which generate links to edit content for users who can access Keystone

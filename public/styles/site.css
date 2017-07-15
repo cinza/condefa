@@ -6351,7 +6351,7 @@ a.logo-small {
     font-weight: 800;
     padding: 0 20px; }
     #salud-wrapper nav.nav-salud a.inactive {
-      color: #bbb;
+      color: #ccc;
       cursor: default; }
 
 #salud-box-wrapper {
@@ -6593,6 +6593,68 @@ a.logo-small {
 /***************************/
 /* END DETALLE STYLES
 /***************************/
+/***************************/
+/* END PLAN PACIENTE
+/***************************/
+#wrapper-plan {
+  background: url(../images/bg-plan-paciente.png)-700%-143% #3EB24F no-repeat;
+  height: 100%; }
+  #wrapper-plan .col-plan {
+    overflow: hidden;
+    width: 100%; }
+    #wrapper-plan .col-plan .news-plan-box {
+      overflow: hidden;
+      position: relative;
+      color: #000;
+      min-height: 200px; }
+      #wrapper-plan .col-plan .news-plan-box img {
+        width: 100%;
+        height: 280px; }
+      #wrapper-plan .col-plan .news-plan-box .title {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        text-transform: uppercase; }
+        #wrapper-plan .col-plan .news-plan-box .title h4 {
+          width: 80%; }
+      #wrapper-plan .col-plan .news-plan-box a {
+        color: #000;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        cursor: pointer; }
+      #wrapper-plan .col-plan .news-plan-box.white .title {
+        color: #fff; }
+      #wrapper-plan .col-plan .news-plan-box.white a {
+        color: #fff; }
+      #wrapper-plan .col-plan .news-plan-box.green .title {
+        color: #3EB24F; }
+      #wrapper-plan .col-plan .news-plan-box.green a {
+        color: #3EB24F; }
+    #wrapper-plan .col-plan .no-img {
+      background: #255984;
+      height: 280px; }
+    #wrapper-plan .col-plan .no-img-white {
+      background: #fff;
+      height: 280px; }
+    #wrapper-plan .col-plan .right {
+      float: right; }
+  #wrapper-plan .pages-nav {
+    width: 100%;
+    padding: 70px 20px 30px 20px; }
+    #wrapper-plan .pages-nav a {
+      padding: 10px;
+      color: #000;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 6px; }
+      #wrapper-plan .pages-nav a.previous {
+        float: left; }
+      #wrapper-plan .pages-nav a.next {
+        float: right; }
+
+/***************************/
+/* END PLAN PACIENTE
+/***************************/
 /***********************/
 /* Media Query fixes
 /**********************/
@@ -6632,7 +6694,17 @@ a.logo-small {
     #salud-box-wrapper .column-left-salud {
       border: none; }
       #salud-box-wrapper .column-left-salud p.no-news {
-        text-align: center; } }
+        text-align: center; }
+  #wrapper-plan {
+    background-position: center center; }
+    #wrapper-plan .col-plan .news-plan-box {
+      min-height: 200px; }
+      #wrapper-plan .col-plan .news-plan-box img {
+        height: 200px; }
+    #wrapper-plan .col-plan .no-img {
+      height: 200px; }
+    #wrapper-plan .col-plan .no-img-white {
+      height: 200px; } }
 
 @media only screen and (max-width: 480px) {
   .box-news {
@@ -6743,7 +6815,17 @@ a.logo-small {
     #content-detail-wrapper .content-more-news-wrapper .box-content-more-news .box-content-more-right h4 {
       font-size: 15px; }
     #content-detail-wrapper .content-more-news-wrapper .box-content-more-news .box-content-more-right span {
-      font-size: 12px; } }
+      font-size: 12px; }
+  #wrapper-plan {
+    background-position: center center; }
+    #wrapper-plan .col-plan .news-plan-box {
+      min-height: 200px; }
+      #wrapper-plan .col-plan .news-plan-box img {
+        height: 200px; }
+    #wrapper-plan .col-plan .no-img {
+      height: 200px; }
+    #wrapper-plan .col-plan .no-img-white {
+      height: 200px; } }
 
 @media only screen and (max-width: 320px) {
   .box-news {
@@ -6858,4 +6940,14 @@ a.logo-small {
     #content-detail-wrapper .content-more-news-wrapper .box-content-more-news .box-content-more-right h4 {
       font-size: 15px; }
     #content-detail-wrapper .content-more-news-wrapper .box-content-more-news .box-content-more-right span {
-      font-size: 12px; } }
+      font-size: 12px; }
+  #wrapper-plan {
+    background-position: center center; }
+    #wrapper-plan .col-plan .news-plan-box {
+      min-height: 200px; }
+      #wrapper-plan .col-plan .news-plan-box img {
+        height: 200px; }
+    #wrapper-plan .col-plan .no-img {
+      height: 200px; }
+    #wrapper-plan .col-plan .no-img-white {
+      height: 200px; } }
