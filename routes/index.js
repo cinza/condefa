@@ -35,8 +35,8 @@ var routes = {
 exports = module.exports = function (app) {
 	// Views
 	app.get('/', routes.views.index);
-	app.get('/valores-agregados', routes.views.promocion);
-	app.get('/valores-agregados/:promo', routes.views.promo);
+	// app.get('/valores-agregados', routes.views.promocion);
+	// app.get('/valores-agregados/:promo', routes.views.promo);
 	app.get('/salud-al-dia', routes.views.noticia);
 	app.get('/salud-al-dia/:promo', routes.views.noticiaDetalle);
 

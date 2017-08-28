@@ -329,16 +329,8 @@ a.logo-small{
 
 #map-findus{
 	position:relative;
-	.title-map{
-		position: absolute;
-		top:15px;
-		right:20px;
-		color:#254a94;
-		font-weight: 800;
-		font-size:35px;
-		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-		z-index:99;
-	}
+
+
 	#map-content{
 		box-shadow: 6px 2px 22px #000;
 		z-index: 99;
@@ -435,6 +427,34 @@ a.logo-small{
 	#map {
 			width:100%;
 			height:558px;
+			#search-box{
+				width: 40%;
+				background:$color-titles;
+					box-shadow: 0px 2px 6px #525151;
+				.title-map{
+					color:#fff;
+					font-weight: 800;
+					font-size:35px;
+					text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+					z-index:99;
+					padding:5px 10px;
+
+				}
+
+			}
+			#search-container{
+				background:#fff;
+				width: 100%;
+				padding: 5px 0;
+				input{
+					width: 100%;
+					background: none;
+					height: 30px;
+					font-size:15px;
+					border:none;
+					text-indent: 10px;
+				}
+			}
 	  }
 }
 

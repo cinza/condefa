@@ -18,7 +18,8 @@ block content
 							.box-news-media-wrapper.col-md-5.col-sm-5.col-xs-5.nopadding
 								- if((item.urlVideoYoutube != '')&& item.urlVideoVimeo != '')
 									.box-news-icon-play
-								img(src=item.imgPromo.secure_url alt=item.title).img-responsive
+								- if(item.imgPromo.secure_url)
+									img(src=item.imgPromo.secure_url alt=item.title).img-responsive
 							.box-news-content.col-md-7.col-sm-7.col-xs-7.nopadding
 								.box-news-top
 									h3 #{item.title}
@@ -30,7 +31,7 @@ block content
 		div.col-md-3.col-sm-12.col-xs-12.right
 			.box-old-wrapper
 				h3 PROMOCIONES ANTERIORES
-				- if(locals.data.promoAntiguas != ''){
+				- if(locals.data.promoAntiguas != '')
 					each item in locals.data.promoAntiguas
 						.box-old-news
 							a(href="" target="_blank")
@@ -39,13 +40,4 @@ block content
 									span  #{moment.locale('es')&&moment(item.createdAt).format("LL")} 
 								.box-old-news-content
 										p #{item.description}
-				- }else{		
-					each item in locals.data.promoActuales
-						.box-old-news
-							a(href="" target="_blank")
-								.box-old-news-title
-									h4 #{item.title}
-									span  #{moment.locale('es')&&moment(item.createdAt).format("LL")} 
-								.box-old-news-content
-										p #{item.description}
-				- }
+				

@@ -36,8 +36,7 @@ Home.add({
   history:{label:"Hitoria", type: Types.Html, wysiwyg: true, height:300},
   mision:{label:"Mision y vision",type: Types.Html, wysiwyg: true, height:300},
   values:{label:"Valores",type: Types.Html, wysiwyg: true, height:300},
-  purposes:{label:"Objetivos", type: Types.Html, wysiwyg: true, height:300},
-
+  
   descripcionForm :{type: Types.Html, wysiwyg: true, height:300},
   createdAt: { type: Date, default: Date.now },
 })

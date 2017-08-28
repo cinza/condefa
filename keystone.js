@@ -48,7 +48,7 @@ keystone.set('routes', require('./routes'));
 keystone.set('nav', {
 	'Usuarios': 'users',
 	'paginas':['homes', 'comercios', 'saluds','plans'],
-	'contenido':['promocions','noticia']
+	'contenido':['noticia', 'NoticiaPaciente']
 });
 
 // Start Keystone to connect to your database and initialise the web server

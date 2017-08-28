@@ -33,22 +33,14 @@ block content
 								h3 #{home[0].textSlider4}
 
 			section#sub-nav
-				div.col-md-4.col-sm-12.col-xs-12.nopadding
-					a(href="/valores-agregados")
-						- if (home[0].bannerComercialImg.url)
-						img(src=home[0].bannerComercialImg.secure_url alt="comercio").img-responsive
-						div.title
-							h2 VALORES AGREGADOS
-							p Promociones. Beneficios. Comodidad
-
-				div.col-md-4.col-sm-12.col-xs-12.nopadding
+				div.col-md-6.col-sm-12.col-xs-12.nopadding
 					a(href="/salud-al-dia")
 						- if (home[0].bannerNewsImg.url)
 								img(src=home[0].bannerNewsImg.secure_url alt="noticias").img-responsive
 						div.title
 							h2 SALUD AL DÍA
 							p Nuevas noticas cada semana
-				div.col-md-4.col-sm-12.col-xs-12.nopadding
+				div.col-md-6.col-sm-12.col-xs-12.nopadding
 					a(href="/")
 						- if (home[0].bannerNewsImg.url)
 								img(src=home[0].bannerPlanImg.secure_url alt="plan paciente").img-responsive
@@ -67,7 +59,7 @@ block content
 							li.showContent(data-content='1')  Historia
 							li.showContent(data-content='2')  Misión y visión
 							li.showContent(data-content='3')  Valores
-							li.showContent(data-content='4')  Objetivos
+
 
 					div.slides-about.col-md-8.col-sm-12.col-xs-12
 						div.slide-about.active
@@ -82,11 +74,8 @@ block content
 						div.slide-about
 							-	if (home[0].values)
 								!= home[0].values
-						div.slide-about
-							-	if (home[0].purposes)
-								!= home[0].purposes
 			section#map-findus.col-md-12.nopadding
-				h4.title-map ENCUENTRE SU </br> FARMACIA
+
 				.col-md-4.nopadding#map-content.hidden-xs
 					.content-location-top
 						.location-img
@@ -106,6 +95,10 @@ block content
 						a.share-location(href="") COMPARTIR
 
 				.col-md-8.nopadding
+					#search-box
+						.title-map Encuentre su Farmacia
+						#search-container
+							input(type=text placeholder="Buscar ..")#search-input
 					#map
 			section#contact
 				div.col-md-4.col-sm-12
@@ -135,10 +128,79 @@ block content
 
 
 				script(type="text/javascript").
-					var map;
+				
+					//- 
+					//- for (var i=0, i < locations.length, i++){
+					//- 	
+					//- 	
+					//- }
+					
 					function initMap() {
-							map = new google.maps.Map(document.getElementById('map'), {
-								center: {lat: 9.927128, lng: -84.082012},
-								zoom: 10
+						var map, marker, markerSearch, x;
+						var locations = [['Playa Avellanas', 10.2392766, -85.8432649]];
+						var image = '/images/icon-map.png';
+						var infowindow = new google.maps.InfoWindow();
+						
+						var holder= document.getElementById('search-box');
+						var input = document.getElementById('search-input');
+						console.log(input);
+						//- var searchBox = new google.maps.places.SearchBox(input);
+						//- map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+
+						map = new google.maps.Map(document.getElementById('map'), {
+							center: {lat: 9.927128, lng: -84.082012},
+							zoom: 8,		
+						});
+						
+						map.controls[google.maps.ControlPosition.TOP_RIGHT].push(holder);
+						var autocomplete = new google.maps.places.Autocomplete(input);
+						
+						autocomplete.bindTo('bounds', map);
+						
+						for (x=0; x< locations.length; x++){
+							marker = new google.maps.Marker({
+								position: new google.maps.LatLng(locations[x][1], locations[x][2]),
+								map: map,
+								icon: image	
 							});
+							
+							
+							google.maps.event.addListener(marker, 'click', (function(marker, x){
+								return function(){
+									infowindow.setContent(locations[x][0]);
+									infowindow.open(map, marker);
+									map.setZoom(10);
+									map.setCenter(marker.getPosition());
+								}
+								})(marker, x));
+						}
+						
+						markerSearch = new google.maps.Marker({
+							map:map,
+							anchorPoint: new google.maps.Point(0, -29)
+						});
+						
+						autocomplete.addListener('place_changed', function() {
+							infowindow.close();
+							markerSearch.setVisible(false);
+							var place = autocomplete.getPlace();
+							if (!place.geometry) {
+								// User entered the name of a Place that was not suggested and
+								// pressed the Enter key, or the Place Details request failed.
+								window.alert("No details available for input: '" + place.name + "'");
+								return;
+							}
+							
+							// If the place has a geometry, then present it on a map.
+							 if (place.geometry.viewport) {
+								 map.fitBounds(place.geometry.viewport);
+							 } else {
+								 map.setCenter(place.geometry.location);
+								 map.setZoom(17);  // Why 17? Because it looks good.
+							 }
+							 markerSearch.setPosition(place.geometry.location);
+							 markerSearch.setVisible(true);
+						});
+							
 					}
