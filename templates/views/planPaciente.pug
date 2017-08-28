@@ -17,7 +17,7 @@ block content
 				each item in locals.data.planPaciente.results
 					.box-news
 
-						a(href='/valores-agregados/'+item.slug target="_blank")
+						a(href='/plan-paciente/'+item.slug target="_blank")
 							.box-news-media-wrapper.col-md-5.col-sm-5.col-xs-5.nopadding
 								- if((item.urlVideoYoutube != '')&& item.urlVideoVimeo != '')
 									.box-news-icon-play
@@ -43,7 +43,7 @@ block content
 				- if(locals.data.planPacienteAntiguas.results != ''){
 					each item in locals.data.planPacienteAntiguas.results
 						.box-old-news
-							a(href="" target="_blank")
+							a(href='/plan-paciente/'+item.slug target="_blank")
 								.box-old-news-title
 									h4 #{item.title}
 									span  #{moment.locale('es')&&moment(item.createdAt).format("LL")} 
