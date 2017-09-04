@@ -76,9 +76,10 @@ block content
 								!= home[0].values
 			section#map-findus.col-md-12.nopadding
 
-				.col-md-4.nopadding#map-content.hidden-xs
+				.col-md-3.nopadding#map-content.hidden-xs
 					.content-location-top
 						.location-img
+							img(src="/images/farmacia.png", alt="farmacia").img-responsive
 						.location-title
 							h3 Farmacia Residencial Norte 2
 							span Limon Centro 75 Este de Radio casino
@@ -94,7 +95,7 @@ block content
 
 						a.share-location(href="") COMPARTIR
 
-				.col-md-8.nopadding
+				.col-md-9.nopadding
 					#search-box
 						.title-map Encuentre su Farmacia
 						#search-container
@@ -128,13 +129,6 @@ block content
 
 
 				script(type="text/javascript").
-				
-					//- 
-					//- for (var i=0, i < locations.length, i++){
-					//- 	
-					//- 	
-					//- }
-					
 					function initMap() {
 						var map, marker, markerSearch, x;
 						var locations = [['Playa Avellanas', 10.2392766, -85.8432649]];
