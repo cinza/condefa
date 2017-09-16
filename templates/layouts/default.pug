@@ -76,12 +76,16 @@ html
 						.collapse.navbar-collapse
 							a.logo-small.hidden-md.hidden-xl(href="/")
 								img(src="/images/logo_white_small.png" alt="condefa logo")
-							- if(comercio || detalle)
-								ul.nav.navbar-nav.navbar-right.hide-items
-									each link in navLinks
+							//- - if(comercio || detalle)
+							//- 	ul.nav.navbar-nav.navbar-right.hide-items
+							//- 		each link in navLinks
+							//- 			li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
+							//- - else
+							ul.nav.navbar-nav.navbar-right
+								-if(locals.socioLaboratorio)
+									each link in socioLinks
 										li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
-							- else
-								ul.nav.navbar-nav.navbar-right
+								-else
 									each link in navLinks
 										li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
 

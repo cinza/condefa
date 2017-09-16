@@ -335,6 +335,11 @@ a.logo-small{
 		box-shadow: 6px 2px 22px #000;
 		z-index: 99;
 		height:658px;
+		width:25%;
+		position:absolute;
+		background:#fff;
+		display: none;
+
 	}
 	.content-location-top{
 			.location-img{
@@ -575,7 +580,9 @@ a.logo-small{
 		text-transform: uppercase;
 		font-weight:800;
 		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-
+		&.socio-lab{
+			color:#fff;
+		}
 	}
 	span{
 		font-size:20px;
@@ -1141,6 +1148,210 @@ a.logo-small{
 /* END PLAN PACIENTE
 /***************************/
 
+/***************************/
+/* START SOCIO LABORATORIO
+/***************************/
+#login-socio-laboratorio{
+	background:$color-green;
+	height: 175px;
+	overflow: hidden;
+	text-align:center;
+	iframe{
+		width: 535px;
+		margin: 45px auto;
+	}
+
+	span{
+		padding:10px;
+		font-size: 18px;
+		font-weight: 800;
+		text-transform: uppercase;
+		color:#fff;
+		float: left;
+		border: 1px solid #fff;
+	}
+
+}
+#socio-laboratorio{
+	.box-banner{
+		width: 100%;
+		overflow: hidden;
+		height: 350px;
+		.img-box-banner{
+			overflow: hidden;
+			position: relative;
+			height: 100%;
+			h4{
+				position: absolute;
+				font-size: 70px;
+				font-weight: 800;
+				text-transform: uppercase;
+				color:#fff;
+				bottom: 60px;
+				text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+				&.socios{
+					right: 60px;
+				}
+				&.laboratorio{
+					left: 60px;
+				}
+				a{
+					color:#fff;
+					text-decoration: none;
+					cursor: pointer;
+				}
+
+			}
+		}
+		.box-content{
+			height: 100%;
+			padding: 20px;
+			font-size:14px;
+			text-align: justify;
+			font-weight: 200;
+		}
+		&.blue{
+			.box-content{
+				background: $color-blue;
+				color:#fff;
+				position: relative;
+
+				&:after{
+					right: 100%;
+					bottom: 65px;
+					border: solid transparent;
+					content: " ";
+					height: 0;
+					width: 0;
+					position: absolute;
+					pointer-events: none;
+					border-color: rgba(37, 89, 132, 0);
+					border-right-color: #255984;
+					border-width: 45px;
+					margin-top: -45px;
+					z-index: 99;
+				}
+			}
+		}
+		&.white{
+			.box-content{
+				background:#f4f4f4;
+				color:$color-blue;
+				position: relative;
+
+				&:after{
+					left: 100%;
+					bottom: 65px;
+					border: solid transparent;
+					content: " ";
+					height: 0;
+					width: 0;
+					position: absolute;
+					pointer-events: none;
+					border-color: rgba(244, 244, 244, 0);
+					border-left-color: #f4f4f4;
+					border-width: 45px;
+					margin-top: -45px;
+					z-index: 99;
+				}
+			}
+		}
+	}
+}
+
+#gallery-socio-laboratorio{
+	width: 90%;
+	margin: 0 auto;
+	padding:50px 0;
+	overflow: hidden;
+	text-align: center;
+	.img-gallery{
+		display: inline-block;
+		padding: 0 30px 20px 30px;
+		overflow: hidden;
+	}
+}
+
+
+.login-wrapper{
+	width: 42%;
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	color:#fff;
+	margin:0 auto;
+	.login-col{
+		float:left;
+		padding-right: 20px;
+		overflow: hidden;
+		input[type="submit"]{
+			background: url(../images/login-icon-btn.png) no-repeat 7px 11px;
+			border: 1px solid #fff;
+			font-size: 22px;
+			font-weight: 800;
+			text-transform: uppercase;
+			text-indent: 15px;
+			margin: 20px 0 0 0;
+			padding: 5px 10px;
+		}
+		input.field-input{
+			display: block;
+			background:none;
+			border:1px solid #fff;
+			font-size: 14px;
+			padding:5px 0;
+			color:#fff;
+			margin-bottom: 10px;
+			text-indent: 30px;
+			width:170px;
+		}
+		input:focus{
+			color:#fff;
+			font-weight: 800;
+
+		}
+		::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+			color: #fff;
+			font-weight: 800;
+			text-transform: uppercase;
+		}
+		::-moz-placeholder { /* Firefox 19+ */
+			color: #fff;
+			font-weight: 800;
+			text-transform: uppercase;
+		}
+		:-ms-input-placeholder { /* IE 10+ */
+			color: #fff;
+			font-weight: 800;
+			text-transform: uppercase;
+		}
+		:-moz-placeholder { /* Firefox 18- */
+			color: #fff;
+			font-weight: 800;
+			text-transform: uppercase;
+		}
+		input[type="email"]{
+			background: url("../images/login-mail-icon.png") no-repeat 7px 7px;
+		}
+		input[type="password"]{
+			background: url("../images/login-pass-icon.png") no-repeat 7px 5px;
+		}
+		a{
+			color: #fff;
+			text-transform: uppercase;
+			text-decoration: none;
+			font-size: 12px;
+			margin: 28px 0 0 10px;
+			display: block;
+			&:hover{
+				text-decoration: underline;
+				cursor: pointer;
+			}
+		}
+	}
+}
+/***************************/
+/* END SOCIO LABORATORIO
+/***************************/
+
 /***********************/
 /* Media Query fixes
 /**********************/
@@ -1162,6 +1373,12 @@ a.logo-small{
  }
 
 @media only screen and (max-width : 768px) {
+	.no-mobile{
+		display:none;
+	}
+	.mobile{
+		display: block !important;
+	}
 	box-news{
 		height:215px;
 	}
@@ -1233,6 +1450,22 @@ a.logo-small{
 		}
 
 	}
+	#socio-laboratorio{
+		.box-banner{
+			height: auto;
+			.img-box-banner{
+				h4.laboratorio{
+					left:auto;
+					right: 60px;
+
+				}
+			}
+			.box-content{
+				font-size:16px;
+
+			}
+		}
+	}
 }
 
 @media only screen and (max-width : 480px){
@@ -1242,6 +1475,9 @@ a.logo-small{
 	}
 	.box-news-wrapper{
 		margin:0;
+	}
+	.no-mobile{
+		display:none;
 	}
 	.bannerComercial-text{
 		left:5%;
@@ -1428,6 +1664,37 @@ a.logo-small{
 		}
 
 	}
+	#login-socio-laboratorio {
+		// height: 230px;
+		iframe{
+			width: 200px;
+			margin: 10px auto;
+			.login-col{
+				float: none;
+			}
+		}
+	}
+	#socio-laboratorio{
+		.box-banner{
+			height: auto;
+			.img-box-banner{
+				h4.laboratorio{
+					left:auto;
+					right: 20px;
+					font-size: 35px;
+					bottom: 10px;
+				}
+				h4{
+					font-size: 40px;
+					bottom: 10px;
+				}
+			}
+			.box-content{
+				font-size:16px;
+
+			}
+		}
+	}
 }
 
 ///
@@ -1439,6 +1706,9 @@ a.logo-small{
 	.box-news-wrapper{
 		margin:0;
 		padding: 0!important;
+	}
+	.no-mobile{
+		display:none;
 	}
 	.bannerComercial-text{
 		left:5%;
@@ -1630,5 +1900,35 @@ a.logo-small{
 			}
 		}
 
+	}
+	#login-socio-laboratorio {
+		// height: 230px;
+		iframe{
+			width: 200px;
+			margin: 10px auto;
+			.login-col{
+				float: none;
+			}
+		}
+	}
+	#socio-laboratorio{
+		.box-banner{
+			height: auto;
+			.img-box-banner{
+				h4.laboratorio{
+					left:auto;
+					right: 20px;
+					font-size: 35px;
+				}
+				h4{
+					font-size: 40px;
+					bottom: 10px;
+				}
+			}
+			.box-content{
+				font-size:16px;
+
+			}
+		}
 	}
 }

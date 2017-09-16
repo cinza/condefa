@@ -76,7 +76,7 @@ block content
 								!= home[0].values
 			section#map-findus.col-md-12.nopadding
 
-				.col-md-3.nopadding#map-content.hidden-xs
+				#map-content.hidden-xs
 					.content-location-top
 						.location-img
 							img(src="/images/farmacia.png", alt="farmacia").img-responsive
@@ -86,16 +86,16 @@ block content
 					.content-location-bottom
 						ul
 							li.phone-icon 2234-5678
-							li.phone-icon-2 2234-5678
-							li.pressure-icon Toma de presión
-							li.parkingLot-icon Parqueo
-							li.recipe-icon Recetas
-							li.express-icon Servicio a domicilio
-							li.injections-icon Inyecciones
+							//- li.phone-icon-2 2234-5678
+							li.pressure-icon.opt-icon(data-opt="7") Toma de presión
+							li.parkingLot-icon.opt-icon(data-opt="4") Parqueo
+							li.recipe-icon.opt-icon(data-opt="8") Atención especializada
+							li.express-icon.opt-icon(data-opt="5") Servicio a domicilio
+							li.injections-icon.opt-icon(data-opt="6") Inyecciones
 
-						a.share-location(href="") COMPARTIR
+						//- a.share-location(href="") COMPARTIR
 
-				.col-md-9.nopadding
+				.col-md-12.nopadding
 					#search-box
 						.title-map Encuentre su Farmacia
 						#search-container
@@ -131,17 +131,18 @@ block content
 				script(type="text/javascript").
 					function initMap() {
 						var map, marker, markerSearch, x;
-						var locations = [['Playa Avellanas', 10.2392766, -85.8432649]];
+						//values most be in the follow order: name, latitude, altitude, phone, parking, express, inyects, pressure, specilities, address
+						var locations = [['Aloe', 10.5500530, -85.6968680, '2670-2050', true, true, true, true, true, 'Del Hotel el Coco Bay 50 metros norte']];
+						
 						var image = '/images/icon-map.png';
 						var infowindow = new google.maps.InfoWindow();
 						
 						var holder= document.getElementById('search-box');
 						var input = document.getElementById('search-input');
-						console.log(input);
-						//- var searchBox = new google.maps.places.SearchBox(input);
-						//- map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+						
+					
 
-
+						//- set map to Costa Rica and level of ZOOM
 						map = new google.maps.Map(document.getElementById('map'), {
 							center: {lat: 9.927128, lng: -84.082012},
 							zoom: 8,		
@@ -166,6 +167,15 @@ block content
 									infowindow.open(map, marker);
 									map.setZoom(10);
 									map.setCenter(marker.getPosition());
+									
+									$('#map-content').css("display", "block");
+									$('.location-title h3').text(locations[x][0]);
+									$('.location-title span').text(locations[x][9]);
+									$('.phone-icon').text(locations[x][3]);
+									for( var y = 4; y < 9; y++){
+										locations[x][y] == true ? $('li[data-opt='+y+']').css('display', 'block') :  $('li[data-opt='+y+']').css('display', 'none');
+									}
+					
 								}
 								})(marker, x));
 						}

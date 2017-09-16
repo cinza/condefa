@@ -1,0 +1,54 @@
+extends ../layouts/default
+
+block content
+  section#top-banner.commercial
+    -if(socioLaboratorio)
+      .bannerComercial
+        .bannerComercial-text
+          h1.socio-lab #{socioLaboratorio[0].title}
+        img(src=socioLaboratorio[0].imgBanner.secure_url alt=socioLaboratorio[0].title).img-responsive
+  section#login-socio-laboratorio
+
+    iframe(src="http://ce.farmaciascondefa.com/co/login/pinicio.aspx", frameborder="0")
+    
+  section#socio-laboratorio
+    .box-banner.col-md-12.nopadding.shadow.blue
+      .col-md-7.nopadding.img-box-banner.col-sm-12.col-xs-12#socio
+        -if(socioLaboratorio[0].imgSocio)
+          img(src=socioLaboratorio[0].imgSocio.secure_url, alt=socioLaboratorio[0].textSocio).img-responsive
+        -if(socioLaboratorio[0].textSocios)
+          h4.socios 
+            a(href="/socios") #{socioLaboratorio[0].textSocios}
+      .col-md-5.box-content.col-sm-12.col-xs-12
+        -if(socioLaboratorio[0].contenidoSocios)
+          != socioLaboratorio[0].contenidoSocios
+        
+    .box-banner.col-md-12.nopadding.white.hidden-xs.no-mobile
+      .col-md-5.box-content.col-sm-12.col-xs-12#laboratorio
+        -if(socioLaboratorio[0].contenidoLaboratorios)
+          != socioLaboratorio[0].contenidoLaboratorios
+      .col-md-7.nopadding.img-box-banner.col-sm-12.col-xs-12
+        -if(socioLaboratorio[0].imgLaboratorio)
+          img(src=socioLaboratorio[0].imgLaboratorio.secure_url, alt=socioLaboratorio[0].textLaboratorios).img-responsive
+        -if(socioLaboratorio[0].textLaboratorios)
+          h4.laboratorio 
+            a(href="/laboratorio") #{socioLaboratorio[0].textLaboratorios}
+    //- 
+    .box-banner.col-md-12.nopadding.white.mobile#laboratorio
+      .col-md-7.nopadding.img-box-banner
+        -if(socioLaboratorio[0].imgLaboratorio)
+          img(src=socioLaboratorio[0].imgLaboratorio.secure_url, alt=socioLaboratorio[0].textLaboratorios).img-responsive
+        -if(socioLaboratorio[0].textLaboratorios)
+          h4.laboratorio #{socioLaboratorio[0].textLaboratorios}
+      .col-md-5.box-content.col-sm-12.col-xs-12
+        -if(socioLaboratorio[0].contenidoLaboratorios)
+          != socioLaboratorio[0].contenidoLaboratorios
+
+      //-  GALLERYY
+    #gallery-socio-laboratorio.col-sm-12.col-xs-12
+      -if(socioLaboratorio[0].gallerySocios)
+        each item in socioLaboratorio[0].gallerySocios
+          .img-gallery
+            img(src=item.secure_url alt="logo" )
+              
+        
