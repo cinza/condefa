@@ -23,7 +23,7 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'Quienes somos', key: 'contact', href: '#about' },
 		{ label: 'Farmacias', key:'farmacy' , href:'#map-findus'},
 		{label: 'Contacto', key:'contact', href:'#contact'},
-		{label:'Condefa Online', key:'online', href:'http://ce.farmaciascondefa.com/co/login/inicio.aspx'}
+		{label:'Socios y Laboratorios', key:'socioLab', href:'/socio-laboratorio'}
 	];
 	res.locals.socioLinks = [
 		{label: 'Inicio', key:'home', href:'/'},

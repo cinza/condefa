@@ -132,7 +132,78 @@ block content
 					function initMap() {
 						var map, marker, markerSearch, x;
 						//values most be in the follow order: name, latitude, altitude, phone, parking, express, inyects, pressure, specilities, address
-						var locations = [['Aloe', 10.5500530, -85.6968680, '2670-2050', true, true, true, true, true, 'Del Hotel el Coco Bay 50 metros norte']];
+						//- var locations = [['Aloe', 10.5500530, -85.6968680, '2670-2050', true, true, true, true, true, 'Del Hotel el Coco Bay 50 metros norte']];
+						var locations = [
+					   ['Aloe', 10.5500530, -85.6968680, '2670-2050', true, true, true, true, true, 'Del Hotel el Coco Bay 50 metros norte'],
+					   ['Antorcha', 10.5472860, -85.5898790, '2667-0475', true, true, true, true, true, 'De la Bomba Total 100mts Norte'],
+					   ['Arboleda', 9.8629610, -83.9331000, '4052-2010', true, true, true, true, true, 'Diagonal a la esquina Sureste del Cementerio Obrero.  CC Arboleda'],
+					   ['Arboleda Boulevard', 9.8584210, -83.9260230, '4052-2010', true, true, true, true, true, '100 mts al Este del Perimercados, frente al polideportivo'],
+					   ['Arboleda Calle La Petra', 9.5154400, -83.5456700,	'4052 2010', true, true, true, true, true,	'Cartago, Central, Oriental, 1.5 KM al sur del centro de San Rafael, Calle La Petra'],
+					   ['Arboleda - María Auxiliadora', 9.8654480,	-83.9263750,	'4052-2013', true, true, true, true, true, 'frente a la Estación de Servicio Los Angeles'],
+					   ['Arboleda Tejar', '4052-2010', true, true, true, true, true,	'Cartago, El Guarco, Tejar, 25 metros sur de la entrada Condominio Antigua'],
+					   ['Arboleda - Universal', 9.5132200,	-83.5518300,	'4052-2010','100 S de la esquina sureste del Hospital Max Peralta'],
+					   ['Aserrí', 	9.8624040,	-84.0927300, '2230-3261', true, false, true, true, true,	'Costado Sur de la Iglesia Catolica'],
+					   ['Asís', 	9.9000080,	-84.0629310, '2286-5205', true, true, true, true, true,	'Diagonal a la Iglesia Católica'],
+					   ['Botica Los Ángeles', 	9.8651010,	-83.9157600,	'2551-1174', false, false, true, true, true,	'De la Basilica de los Ángeles, 250 mts oeste, Edificio Marina Umaña'],
+					   ['Botica Nueva', 	9.8967760,	-84.0638510,	'2259-2303', false, false, true, true, true, '50 mts este de la esquina sureste de la iglesia catolica'],
+					   ['Campos', 	9.5645700,	-84.0310000,	'2234-8228', true, true, true, true, true,	'Costado Sur del Parque Central'],
+					   ['Caribeña', 	9.5938700,	-83.0443600,	'2758-1991', false, true, true, true, true,	'Contiguo al Supermercado SAM'],
+					   ['Carmiol', 	9.9431520,	-84.0408820,	'2224-9293', true, true, true, true, true,	'De las instalaciones deportivas de la UCR, 250mts oeste'],
+					   ['Central Liberia', 	10.6310460,	-85.4360140,	'2666-5917', false, false, true, true, true, 	'250 mts este del BCR'],
+					   ['Cervantes', 	9.8858550,	-83.8080400,	'2534-7691', false, false, true, true, true,	'Cervates, diagonal a la Iglesia Católica'],
+					   ['Ciudad Cariari', 	9.9761160,	-84.1557860,	'2293-8074', true, true, true, true, true,	'Contiguo al Fresh Market, entrada en direccion Hotel Doubletree by Hilton Cariari'],
+					   ['Clínica Médica del Sur #1', 	9.9146080,	-84.0974700,	'2252-7406', false, false, true, true, true,	'Frente al parqueo de la Clinica Solón Nuñez'],
+					   ['Clínica Médica del Sur #2', 	9.9507260,	-84.0331710,	'2245-2222', true, false, true, true, true,	'El Alto de Guadalupe, Hospital Clínica Médica Jesuralén'],
+					   ['Crisma (Antigua San Carlos 2)', 	10.3432380,	-84.4329290,	'2460-3894', true, false, true, true, true,	'Frente al Hospital San Carlos, Edificio Amores'],
+					   ['De Limón', 	9.5927400,	-83.0156200,	'2758-5450', false, false, true, true, true, 	'De la Catedral 75 metros Oeste, calle 6 y 7, avenida 3'],
+					   ['Del Mar - Parrita', 9.5204340,	-84.3272410, '2779-9785', true, false, true, true, true, 'De las oficinas administrativas del ICE, 200 mts Norte'],
+					   ['Del Pueblo', 	10.4715010,	-84.6434060,	'2479-7264', true, false, true, true, true,	'De la Escuela de la Fortuna 25 mts Oeste Frente al Bco Popular'],
+					   ['Desamparados', 	9.5355500,	-84.0355500,	'2259-1103', false, false, true, true, true,	'Costado norte del Parque Central, bajos Edificio Municipal'],
+					   ['Distribuidora de la cruz', 	10.1930100,	-84.2550300,	'2460-8396', false, false, true, true, true,	'25M Norte del mercado municipal de Ciudad Qusada'],
+					   ['Don Gerardo -Barranca-',	9.9818870,	-84.7214610,	'2663-7101', false, false, true, true, true,	'Del Imas Barranca, 100 mts al este'],
+					   ['Don Gerardo- Botica Orotina-', 	9.9132570,	-84.5244350, '2428-2060', true, true, true, true, true,	'75 mts Oeste del Jardin de niños de Orotina, contiguo al almacen Casa Blanca'],
+					   ['Don Gerardo - Buenos Aires-', 	9.1699070,	-83.3308870,	'2730-5959', true, false, true, true, true,	'Frente al Hospital de Buenos Aires'],
+					   ['Don Gerardo - Cañas', 	10.4278150,	-85.0914650,	'2669-0748', true, true, true, true, true,	'Cañas centro, detrás de la iglesia católica'],
+					   ['Don Gerardo - El Puerto (Puntarenas)',  	9.9777910,	-84.8307300,	'2661-4960', true, true, true, true, true, '50m Oeste de las oficinas del ICE'],
+					   ['Don Gerardo - El Roble', 	9.9779790,	-84.7342450,	'2663-9940', true, false, true, true, true,	'Centro Comercial La Rioja'],
+					   ['Don Gerardo - Esparza', 	9.9912460,	-84.6667680,	'2636-4722', false, false, true, true, true,	'75m Norte del Mercado Municipal'],
+					   ['Don Gerardo - Hospital',  	9.9754630,	-84.7534160,	'2664-3865', true, false, true, true, true,	'Costado Noroeste del Hospital Monseñor Sanabria'],
+					   ['Don Gerardo - Limonal', 	10.2650000,	-85.0194250,	'2668-8245', true, false, true, true, true,	'CC Plaza Limonal, local numero 4'],
+					   ['Don Gerardo - Marañonal', 	9.9972900,	-84.6577810,	'2635-2518', true, true, true, true, true,	'Contiguo al BCR'],
+					   ['Don Gerardo - Miramar',  	10.0842370,	-84.7313420,	'2639-6450', true,  false, true, true, true,	'De la Clinica de Miramar 200mts norte'],
+					   ['Don Gerardo - Monteverde',	10.3173030,	-84.8229540,	'2645-7060', true, false, true, true, true,	'100mts este del Consejo Municipal, antiguo Banco Popular'],
+					   ['Don Gerardo - Orotina', 	9.9125440,	-84.5240660,	'2428-4612', false, true, true, true, true,	'Del Parque Central 75 mts Oeste'],
+					   ['Don Gerardo - Paquera', 	9.8203780,	-84.9330700,	'2641-0344', true, false, true, true, true,	'Frente a parada de taxis'],
+					   ['Don Gerardo - Parrita',  	9.5202210,	-84.3301030,	'2779-8290', true, false, true, true, true,	'Frente a la Torre del ICE, calle principal C.C Sofia, local 2'],
+					   ['Don Gerardo - Pérez Zeledón 1', 	9.3587160,	-83.6859910,	'2770-3871', true, true, true, true, true,	'Perez Zeledón, Villa Ligia frente al Supermercado'],
+					   ['Don Gerardo - Pérez Zeledón 2', 	9.3735300,	-83.7036310,	'4702-5417', true, true, true, true, true,	'Contiguo al supermercado Palí'],
+					   ['Don Gerardo - Quepos 1',  	9.4301440,	-84.1656480,	'2777-0038', true, true, true, true, true, 'Frente al Malecón en Quepos Centro'],
+					   ['Don Gerardo - Quepos 2', 	9.4313080,	-84.1634870,	'2777-6635', false, false, true, true, true,	'Del ICE  50mts al Norte'],
+					   ['Don Gerardo - Sabana', 	9.9330220,	-84.1085770,	'2220-2333', true, false, true, true, true,	'200mts Este del Colegio de Medicos'],
+					   ['Don Juan', 	9.9787640,	-84.3805960,	'2446-5055', false, true, true, true, true,	'Costado oeste de la Iglesia Católica'],
+					   ['Dozel - Puriscal', 	9.8461510,	-84.3149690,	'2416-6029', false, false, true, true, true,	'Costado Sur de antiguo Templo Católico'],
+					   ['DR. Santa Paula', 	10.2407000,	-84.0802000,	'2761-0020', true, true, true, true, true,	'Frente a la Escuela Claudio Lara'],
+					   ['DR. Tres Ríos ',  9.5430500, -83.5911100, '2279-2294', true, true, true, true,true , '150 mts al Oeste de la Municipalidad de Tres Ríos'],
+					   ['Económica - Hospital Quepos', 9.4432390, -84.1378870, '2777-7421', true, true, true, true, true, 'Diagonal al Hospital de Quepos La Managua'],
+					   ['Económica - Jacó', 9.6172130, -84.6311130, '2643-2809', true, false, true, true, true, 'De la Licorera El Mar 25 mts Norte, C.c Plaza Coral, Local 10'],
+					   ['Económica - Jacó Centro', 9.9132720, -84.6272380, '2643-6544', true, false, true, true, true, 'Frente al Banco Nacional, contiguo a Pachis Pan'],
+					   ['Economica- Plaza Quepos', 9.4315210, -84.1597330, '2777-3212', true, false, true, true, true, 'Puntarenas, Quepos centro, contiguo a Pali'],
+					   ['Económica - Quepos', 9.4302320, -84.1621560, '2777-3212', false, true, true, true, true, 'Del BCR de Quepos 75 mts al Este'],
+					   ['Económica - Quepos 2', 9.4303540, -84.1632190, '2777-2130', false, true, true, true, true, 'Frente al Mercado Municipal de Quepos'],
+					   ['El Ahorro - Siquirres', 10.0968650, -83.5055260, '2768-6273',false, false, true, true, true, 'Contiguo a la parada de buses frente a Agroveterinaria El Colono'],
+					   ['El Sol', 9.9534250, -84.1900840, '2282-5292', true, true, true, true, true, 'Del Servicentro Hermanos Montes 100 mts norte, Cc Don Esteban'],
+					   ['Farma Especializada-Barrio México', 	9.5626600,	-84.0513200,	'2222-1478',	false, true, true, true, true,	'San José	Barrio México	Central	De la Defensoría de los Habitantes, 100 mts al Este'],
+					   ['Farma Especializada - Los Yoses', 	9.9322060,	-84.0591940,	'2253-1400', true, true, true, true, true,	'San José	San Pedro 	Los Yoses	Automercado 25 mts este, Contiguo a Panaderia Giacomin'],
+					   ['Farma Especializada - Santo Domingo', 	9.9839990,	-84.0833280,	'2244-2178', true, true, true, true, true,	'Heredia	Santo Domingo	Central	Del Mas x Menos de Santo Domingo, 150 mts al Este'],
+					   ['Farmacia Campo Real',	9.9522170,	-84.2315100,	'4701-0203',	'Alajuela	Alajuela	San Rafael	Alajuela, San Rafael, Centro comercial Campo Real local #17'],
+					   ['Farmacia Chan', 	10.2815530,	-84.9588140,	'2662-1160', false, false, true, true, true,	'Guanacaste	Abangares	Las Juntas	Las Juntas Abangares, frente al ICE'],
+					   ['Farmacia Dr Esparza',	9.9904190,	-84.6669750,	'2635-2753', false, false, true, true, true,	'Puntarenas	Esparza	Espiritu Santo	Puntarenas, Esparza, Espiritu Santo, frente a la esquina noreste del parque central de Esparza'],
+					   ['Farmacia Dr. Orotina',	9.9128590,	-84.5226490,	'2427-8815', false, false, true, true, true,	'Alajuela	Orotina	Orotina	Orotina, 50 este de la Plazoleta del Mercado Municipal'],
+					   ['Farmacia Fardeli Catedrál',	9.9909440,	-83.0322770,	'2798-1366', false, false, true, true, true,	'Limon	Limon	Limon	75m Oeste de la catedral de Limon'],
+					   ['Farmacia Integral La Trinidad',	10.0141630,	-84.2299840,	'2430-4761', false, false, true, true, true, 	'Alajuela	Alajuela	Alajuela	Del cementerio de Alajuela 1,2 kms al Oeste edificio esquinero a mano izquierda'],
+					   ['Farmacia Integral La Uruca',	9.9482600,	-84.1135450,	'2291-4772', false, true, true, true, true,	'San José	San Jose	Uruca	San Jose, La Uruca, 300 sureste de la entrada sur del Hospital Mexico'],
+					   ['Farmacia La Plaza',	9.8761770,	-84.1545210,	'2293-6600', true, true, true, true, true,	'Heredia	Heredia	Ulloa	Heredia, Ulloa, Centro comercial Plaza Cariari, local A27'],
+					 ];
 						
 						var image = '/images/icon-map.png';
 						var infowindow = new google.maps.InfoWindow();
@@ -145,7 +216,7 @@ block content
 						//- set map to Costa Rica and level of ZOOM
 						map = new google.maps.Map(document.getElementById('map'), {
 							center: {lat: 9.927128, lng: -84.082012},
-							zoom: 8,		
+							zoom: 9,		
 						});
 						
 						map.controls[google.maps.ControlPosition.TOP_RIGHT].push(holder);
