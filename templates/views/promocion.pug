@@ -1,43 +1,42 @@
-extends ../layouts/default
-block content
-
-	section#top-banner.commercial
-		-if(comercio)
-			.bannerComercial
-				.bannerComercial-text
-					h1 #{comercio[0].title}
-					span #{comercio[0].description}
-				img(src=comercio[0].imgBanner.secure_url alt=comercio[0].title).img-responsive
-	section#wrapper-news
-		div.col-md-8.col-sm-12.col-xs-12.box-news-wrapper
-			-if(locals.data.promoActuales)
-				each item in locals.data.promoActuales
-					.box-news
-
-						a(href='/valores-agregados/'+item.slug target="_blank")
-							.box-news-media-wrapper.col-md-5.col-sm-5.col-xs-5.nopadding
-								- if((item.urlVideoYoutube != '')&& item.urlVideoVimeo != '')
-									.box-news-icon-play
-								- if(item.imgPromo.secure_url)
-									img(src=item.imgPromo.secure_url alt=item.title).img-responsive
-							.box-news-content.col-md-7.col-sm-7.col-xs-7.nopadding
-								.box-news-top
-									h3 #{item.title}
-									span #{moment.locale('es')&&moment(item.createdAt).format("LL")} 
-
-								.box-news-preview-content
-									!= item.description
-				
-		div.col-md-3.col-sm-12.col-xs-12.right
-			.box-old-wrapper
-				h3 PROMOCIONES ANTERIORES
-				- if(locals.data.promoAntiguas != '')
-					each item in locals.data.promoAntiguas
-						.box-old-news
-							a(href="" target="_blank")
-								.box-old-news-title
-									h4 #{item.title}
-									span  #{moment.locale('es')&&moment(item.createdAt).format("LL")} 
-								.box-old-news-content
-										p #{item.description}
-				
+//- extends ../layouts/default
+//- block content
+//- 
+//- 	section#top-banner.commercial
+//- 		-if(comercio)
+//- 			.bannerComercial
+//- 				.bannerComercial-text
+//- 					h1 #{comercio[0].title}
+//- 					span #{comercio[0].description}
+//- 				img(src=comercio[0].imgBanner.secure_url alt=comercio[0].title).img-responsive
+//- 	section#wrapper-news
+//- 		div.col-md-8.col-sm-12.col-xs-12.box-news-wrapper
+//- 			-if(locals.data.promoActuales)
+//- 				each item in locals.data.promoActuales
+//- 					.box-news
+//- 
+//- 						a(href='/valores-agregados/'+item.slug target="_blank")
+//- 							.box-news-media-wrapper.col-md-5.col-sm-5.col-xs-5.nopadding
+//- 								- if((item.urlVideoYoutube != '')&& item.urlVideoVimeo != '')
+//- 									.box-news-icon-play
+//- 								- if(item.imgPromo.secure_url)
+//- 									img(src=item.imgPromo.secure_url alt=item.title).img-responsive
+//- 							.box-news-content.col-md-7.col-sm-7.col-xs-7.nopadding
+//- 								.box-news-top
+//- 									h3 #{item.title}
+//- 									span #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+//- 
+//- 								.box-news-preview-content
+//- 									!= item.description
+//- 
+//- 		div.col-md-3.col-sm-12.col-xs-12.right
+//- 			.box-old-wrapper
+//- 				h3 PROMOCIONES ANTERIORES
+//- 				- if(locals.data.promoAntiguas != '')
+//- 					each item in locals.data.promoAntiguas
+//- 						.box-old-news
+//- 							a(href="" target="_blank")
+//- 								.box-old-news-title
+//- 									h4 #{item.title}
+//- 									span  #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+//- 								.box-old-news-content
+//- 										p #{item.description}

@@ -9,6 +9,7 @@ exports = module.exports = function (req, res) {
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
 	locals.section = 'detalle';
+
 	locals.filters ={
     promo: req.params.promo,
     category:"",
@@ -22,7 +23,7 @@ exports = module.exports = function (req, res) {
   }
 
   view.on('init', function(next){
-    var q = keystone.list('NoticiaPaciente').model.findOne({
+    var q = keystone.list('NoticiaLab').model.findOne({
       slug: locals.filters.promo
     });
 
@@ -36,7 +37,7 @@ exports = module.exports = function (req, res) {
   });
 
   view.on('init', function(next){
-    var q = keystone.list('NoticiaPaciente').model.find({
+    var q = keystone.list('NoticiaLab').model.find({
       category: locals.filters.category,
       slug : {$ne: locals.filters.promo}
     }).limit(4);
@@ -49,7 +50,7 @@ exports = module.exports = function (req, res) {
   });
 
   view.on('init', function(next){
-    var q = keystone.list('NoticiaPaciente').model.find({
+    var q = keystone.list('NoticiaLab').model.find({
       month: currentMonth,
       slug : {$ne: locals.filters.promo}
     }).limit(4);

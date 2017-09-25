@@ -17,8 +17,8 @@ block content
         -if(socioLaboratorio[0].imgSocio)
           img(src=socioLaboratorio[0].imgSocio.secure_url, alt=socioLaboratorio[0].textSocio).img-responsive
         -if(socioLaboratorio[0].textSocios)
-          h4.socios 
-            a(href="/socios") #{socioLaboratorio[0].textSocios}
+          h4.socios #{socioLaboratorio[0].textSocios}
+            
       .col-md-5.box-content.col-sm-12.col-xs-12
         -if(socioLaboratorio[0].contenidoSocios)
           != socioLaboratorio[0].contenidoSocios
@@ -31,8 +31,7 @@ block content
         -if(socioLaboratorio[0].imgLaboratorio)
           img(src=socioLaboratorio[0].imgLaboratorio.secure_url, alt=socioLaboratorio[0].textLaboratorios).img-responsive
         -if(socioLaboratorio[0].textLaboratorios)
-          h4.laboratorio 
-            a(href="/laboratorio") #{socioLaboratorio[0].textLaboratorios}
+          h4.laboratorio  #{socioLaboratorio[0].textLaboratorios}
     //- 
     .box-banner.col-md-12.nopadding.white.mobile#laboratorio
       .col-md-7.nopadding.img-box-banner
@@ -51,4 +50,13 @@ block content
           .img-gallery
             img(src=item.secure_url alt="logo" )
               
-        
+//- script(type="text/javascript").
+//-   var status;
+//-   var typeUser;
+//-   
+//-   function receiveStatus(event){
+//-     if(event.origin !== "")return;
+//-     
+//-   }
+//-   windwow.addEventListener("message", receiveStatus, false);
+//-      

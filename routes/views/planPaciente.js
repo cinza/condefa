@@ -16,7 +16,7 @@ exports = module.exports = function (req, res) {
     planPaciente:[],
 		planPacienteAntiguas:[]
   };
-
+	// plan banner details
 	view.query('plan', keystone.list('Plan').model.find());
 
   view.on('init', function(next){

@@ -1,0 +1,97 @@
+extends ../layouts/default
+block content
+  - var currentPageNoticia = parseInt(locals.data.socioNoticia.currentPage);
+  - var nextPageNoticia = currentPage+1;
+  - var previousPageNoticia = currentPage-1;
+  
+  - var currentPagePromo = parseInt(locals.data.socioPromo.currentPage);
+  - var nextPagePromo = currentPage+1;
+  - var previousPagePromo = currentPage-1;
+
+  section#top-banner.commercial
+    -if(socio != '')
+      .bannerComercial
+        .bannerComercial-text
+          h1 #{socio[0].title}
+        img(src=socio[0].imgBanner.secure_url alt=socio[0].title).img-responsive
+  
+  section#wrapper-socio
+    div#top-socio.col-md-12.col-sm-12.col-xs-12.nopadding
+      ul.nav.nav-tabs#socio-nav
+        li.active
+          a#news-icon(href="#noticia" data-toggle="tab") Noticias
+        li
+          a#promo-icon(href="#promo-socio" data-toggle="tab") Promociones
+    div#socio-content.col-md-12.col-sm-12.col-xs-12.nopadding    
+      .tab-content    
+        #noticia.tab-pane.active
+          .tab-content-socio.col-md-9.col-sm-12.col-xs-12
+            if(locals.data.socioNoticia.results)
+              each item in locals.data.socioNoticia.results
+                div.col-md-4.col-sm-12.col-xs-12.salud-preview-box.socio
+                  a(href="/socio/"+item.slug target="_blank")
+                    .salud-preview-media
+                      //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                        .box-news-icon-play
+                      img(src=item.imgPromo.secure_url alt=item.title)
+                    .salud-preview-box-content.socio.news-socio
+                      h6 #{item.title}
+                      span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+
+                      .preview-box-content-tex
+                        p  #{item.description}
+            .col-plan.pages-nav
+              if(locals.data.socioNoticia.previous)
+                a(href="?pageNoticia="+previousPageNoticia).previous  Anterior <i class="fa fa-arrow-left" aria-hidden="true"></i>
+              if(locals.data.socioNoticia.next)
+                a(href="?pageNoticia="+nextPageNoticia).next Siguiente  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          .col-md-3.col-sm-12.col-xs-12.old-news-socio
+            h5 Publicaciones anteriores
+            if(locals.data.socioNoticiaAntigua.results)
+              each item in locals.data.socioNoticiaAntigua.results
+               div.box-old-socio-news
+                 a(href="/socio/"+item.slug target="_blank")
+                   h6 #{item.title}
+                   span.fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+                   div.content-old-socio-news
+                     p  #{item.description}
+            else
+              p No hay publicaciones anteriores
+        #promo-socio.tab-pane
+          .tab-content-socio.col-md-9.col-sm-12.col-xs-12
+            if(locals.data.socioPromo.results)
+              each item in locals.data.socioPromo.results
+                div.col-md-4.col-sm-12.col-xs-12.salud-preview-box.socio
+                  a(href="/socio/"+item.slug target="_blank")
+                    .salud-preview-media
+                      //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                        .box-news-icon-play
+                      img(src=item.imgPromo.secure_url alt=item.title)
+                    .salud-preview-box-content.socio.news-socio
+                      h6 #{item.title}
+                      span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+
+                      .preview-box-content-tex
+                        p  #{item.description}
+            .col-plan.pages-nav
+              if(locals.data.socioPromo.previous)
+                a(href="?pagePromo="+previousPagePromo).previous  Anterior <i class="fa fa-arrow-left" aria-hidden="true"></i>
+              if(locals.data.socioNoticia.next)
+                a(href="?pagePromo="+nextPagePromo).next Siguiente <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          .col-md-3.col-sm-12.col-xs-12.old-news-socio
+            h5 Publicaciones anteriores
+            if(locals.data.socioPromoAntigua.results)
+              each item in locals.data.socioPromoAntigua.results
+               div.box-old-socio-news
+                 a(href="/socio/"+item.slug target="_blank")
+                   h6 #{item.title}
+                   span.fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+                   div.content-old-socio-news
+                     p  #{item.description}
+            else
+              p No hay publicaciones anteriores
+      
+      
+
+    
+  

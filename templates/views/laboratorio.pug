@@ -1,0 +1,93 @@
+extends ../layouts/default
+block content
+  - var currentPageNoticia = parseInt(locals.data.laboratorioNoticia.currentPage);
+  - var nextPageNoticia = currentPage+1;
+  - var previousPageNoticia = currentPage-1;
+
+  - var currentPagePromo = parseInt(locals.data.laboratorioPromo.currentPage);
+  - var nextPagePromo = currentPage+1;
+  - var previousPagePromo = currentPage-1;
+
+  section#top-banner.commercial
+    -if(laboratorio != '')
+      .bannerComercial
+        .bannerComercial-text
+          h1 #{laboratorio[0].title}
+        img(src=laboratorio[0].imgBanner.secure_url alt=laboratorio[0].title).img-responsive
+
+  section#wrapper-socio.white
+    div#top-socio.col-md-12.col-sm-12.col-xs-12.nopadding
+      ul.nav.nav-tabs#socio-nav
+        li.active
+          a#news-icon(href="#noticia" data-toggle="tab") Noticias
+        li
+          a#promo-icon(href="#promo-socio" data-toggle="tab") Promociones
+    div#socio-content.col-md-12.col-sm-12.col-xs-12.nopadding
+      .tab-content
+        #noticia.tab-pane.active
+          .tab-content-socio.col-md-9.col-sm-12.col-xs-12
+            if(locals.data.laboratorioNoticia.results)
+              each item in locals.data.laboratorioNoticia.results
+                div.col-md-4.col-sm-12.col-xs-12.salud-preview-box.socio.white
+                  a(href="/laboratorio/"+item.slug target="_blank")
+                    .salud-preview-media
+                      //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                        .box-news-icon-play
+                      img(src=item.imgPromo.secure_url alt=item.title)
+                    .salud-preview-box-content.socio.news-socio.white
+                      h6 #{item.title}
+                      span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+
+                      .preview-box-content-tex
+                        p  #{item.description}
+            .col-plan.pages-nav
+              if(locals.data.laboratorioNoticia.previous)
+                a(href="?pageNoticia="+previousPageNoticia).previous  Anterior <i class="fa fa-arrow-left" aria-hidden="true"></i>
+              if(locals.data.laboratorioNoticia.next)
+                a(href="?pageNoticia="+nextPageNoticia).next Siguiente  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          .col-md-3.col-sm-12.col-xs-12.old-news-socio.white
+            h5 Publicaciones anteriores
+            if(locals.data.laboratorioNoticiaAntiguo.results)
+              each item in locals.data.laboratorioNoticiaAntiguo.results
+               div.box-old-socio-news
+                 a(href="/laboratorio/"+item.slug target="_blank")
+                   h6 #{item.title}
+                   span.fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+                   div.content-old-socio-news
+                     p  #{item.description}
+            else
+              p No hay publicaciones anteriores
+        #promo-socio.tab-pane
+          .tab-content-socio.col-md-9.col-sm-12.col-xs-12
+            if(locals.data.laboratorioPromo.results)
+              each item in locals.data.laboratorioPromo.results
+                div.col-md-4.col-sm-12.col-xs-12.salud-preview-box.socio.white
+                  a(href="/laboratorio/"+item.slug target="_blank")
+                    .salud-preview-media
+                      //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                        .box-news-icon-play
+                      img(src=item.imgPromo.secure_url alt=item.title)
+                    .salud-preview-box-content.socio.news-socio.white
+                      h6 #{item.title}
+                      span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+
+                      .preview-box-content-tex
+                        p  #{item.description}
+            .col-plan.pages-nav
+              if(locals.data.laboratorioPromo.previous)
+                a(href="?pagePromo="+previousPagePromo).previous  Anterior <i class="fa fa-arrow-left" aria-hidden="true"></i>
+              if(locals.data.laboratorioPromo.next)
+                a(href="?pagePromo="+nextPagePromo).next Siguiente <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          .col-md-3.col-sm-12.col-xs-12.old-news-socio.white
+            h5 Publicaciones anteriores
+            if(locals.data.laboratorioPromoAntiguo.results)
+              each item in locals.data.laboratorioPromoAntiguo.results
+               div.box-old-socio-news
+                 a(href="/laboratorio/"+item.slug target="_blank")
+                   h6 #{item.title}
+                   span.fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
+                   div.content-old-socio-news
+                     p  #{item.description}
+            else
+              p No hay publicaciones anteriores
+      

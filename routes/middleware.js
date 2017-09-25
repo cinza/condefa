@@ -31,8 +31,12 @@ exports.initLocals = function (req, res, next) {
 		{label: 'Socios', key:'socio', href:'#socio'},
 		{label: 'laboratorios', key:'laboratorio', href:'#laboratorio'},
 	];
-
+	res.locals.internal = [
+		{label:'Inicio',key:'home', href:'/'},
+		{label:'Condefa Online',key:'online', href:'http://ce.farmaciascondefa.com/co/login/inicio.aspx'}
+	];
 	res.locals.user = req.user;
+	
 	next();
 };
 

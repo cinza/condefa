@@ -85,9 +85,13 @@ html
 								-if(locals.socioLaboratorio)
 									each link in socioLinks
 										li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
+								-else if(locals.laboratorio || locals.socio)
+									each link in internal
+										li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
 								-else
 									each link in navLinks
 										li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
+								
 
 		
 		#body
@@ -117,7 +121,8 @@ html
 		//- Customise which Bootstrap javascript files are served by including
 		//- them specifically here, instead of bootstrap-3.3.5.min.js
 		script(src='/js/bootstrap/bootstrap-3.3.5.min.js')
-		script(src='/js/home.js')
+		if(socio == undefined && laboratorio == undefined)
+			script(src='/js/home.js')
 		script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDvS6Wu84nQOnXGRqoE4u9uQB07XOEQZFA&libraries=places&callback=initMap' async defer)
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js')
 		script(src='https://use.fontawesome.com/165744ea51.js')
