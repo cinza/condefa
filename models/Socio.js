@@ -7,6 +7,7 @@ var Types = keystone.Field.Types;
  */
 
 var Socio = new keystone.List('Socio',{
+  nocreate: true,
   singular:"Socio",
   plural:"Socios",
   label: 'Socio',

@@ -7,8 +7,8 @@ var Types = keystone.Field.Types;
  */
 
 var SocioLaboratorio = new keystone.List('SocioLaboratorio',{
-  singular:"SocioLaboratrio",
-  plural:"SocioLaboratrio",
+  singular:"SocioLaboratorio",
+  plural:"SocioLaboratorio",
   label:"Socios y Laboratorio",
   autokey: {path:"slug", from: "title", unique: true},
   map:{name:'title'}

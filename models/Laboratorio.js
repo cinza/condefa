@@ -7,6 +7,7 @@ var Types = keystone.Field.Types;
  */
 
 var Laboratorio = new keystone.List('Laboratorio',{
+  nocreate: true,
   singular:"Laboratorio",
   plural:"Laboratorios",
   label: 'Laboratorio',
