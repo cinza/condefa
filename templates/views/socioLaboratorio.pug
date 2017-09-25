@@ -50,24 +50,24 @@ block content
           .img-gallery
             img(src=item.secure_url alt="logo" )
               
-script(type="text/javascript").
-  var url = "http://" + window.location.hostname + "/";
-  var valueUser;
+  script(type="text/javascript").
+    var url = "http://" + window.location.hostname + "/";
+    var valueUser;
 
-  function splitMessage(stringToSplit, separator){
-    valueUser = stringToSplit.split(separator);
-  }
-
-  function receiveStatus(event){
-    if(event.origin !== "http://ce.farmaciascondefa.com")return;
-    splitMessage(event.data, ' ')
-    console.log(localStorage);
-    if(valueUser[0] == 200){
-      valueUser[1] = valueUser[1].toLowerCase();
-      valueUser[1]=="socio"? localStorage.userSocio = true : localStorage.userLab = true;
-      window.open(url+valueUser[1], '_blank');
+    function splitMessage(stringToSplit, separator){
+      valueUser = stringToSplit.split(separator);
     }
-  }
 
-  window.addEventListener("message", receiveStatus, false);
-     
+    function receiveStatus(event){
+      if(event.origin !== "http://ce.farmaciascondefa.com")return;
+      splitMessage(event.data, ' ')
+      console.log(localStorage);
+      if(valueUser[0] == 200){
+        valueUser[1] = valueUser[1].toLowerCase();
+        valueUser[1]=="socio"? localStorage.userSocio = true : localStorage.userLab = true;
+        window.open(url+valueUser[1], '_blank');
+      }
+    }
+
+    window.addEventListener("message", receiveStatus, false);
+       
