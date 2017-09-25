@@ -36,7 +36,7 @@ exports.initLocals = function (req, res, next) {
 		{label:'Condefa Online',key:'online', href:'http://ce.farmaciascondefa.com/co/login/inicio.aspx'}
 	];
 	res.locals.user = req.user;
-	
+
 	next();
 };
 
@@ -67,3 +67,7 @@ exports.requireUser = function (req, res, next) {
 		next();
 	}
 };
+
+// exports.requireUserType = function(req, res,next){
+// 	if(res.locals.user)
+// }
