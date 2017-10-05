@@ -472,8 +472,6 @@ a.logo-small{
 	.content-location-top{
 			.location-img{
 				min-height: 100px;
-				background:beige;
-				height:260px;
 			}
 			.location-title{
 				padding:10px 0 10px 20px;
@@ -1222,7 +1220,7 @@ a.logo-small{
 /* START SOCIO LABORATORIO
 /***************************/
 #login-socio-laboratorio{
-	background:$color-green;
+	background:url("/images/bg-login.png") no-repeat center center $color-green;
 	height: 175px;
 	overflow: hidden;
 	text-align:center;
@@ -1243,6 +1241,8 @@ a.logo-small{
 
 }
 #socio-laboratorio{
+	overflow: hidden;
+	background:#fff;
 	.box-banner{
 		width: 100%;
 		overflow: hidden;

@@ -61,7 +61,7 @@ block content
     function receiveStatus(event){
       if(event.origin !== "http://ce.farmaciascondefa.com")return;
       splitMessage(event.data, ' ')
-      console.log(localStorage);
+      
       if(valueUser[0] == 200){
         valueUser[1] = valueUser[1].toLowerCase();
         valueUser[1]=="socio"? localStorage.userSocio = true : localStorage.userLab = true;

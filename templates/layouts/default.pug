@@ -91,10 +91,10 @@ html
 										li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
 								-else if(locals.laboratorio || locals.socio)
 									each link in internal
-										li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
+										li(class=(section == link.key ? 'active' : null)): a(href=link.href id=link.key)= link.label
 								-else
 									each link in navLinks
-										li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
+										li(class=(section == link.key ? 'active' : null)): a(href=link.href )= link.label
 								
 
 		

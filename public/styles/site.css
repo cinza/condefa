@@ -6172,9 +6172,7 @@ a.logo-small {
     background: #fff;
     display: none; }
   #map-findus .content-location-top .location-img {
-    min-height: 100px;
-    background: beige;
-    height: 260px; }
+    min-height: 100px; }
   #map-findus .content-location-top .location-title {
     padding: 10px 0 10px 20px;
     color: #fff;
@@ -6727,7 +6725,7 @@ a.logo-small {
 /* START SOCIO LABORATORIO
 /***************************/
 #login-socio-laboratorio {
-  background: #3EB24F;
+  background: url("/images/bg-login.png") no-repeat center center #3EB24F;
   height: 175px;
   overflow: hidden;
   text-align: center; }
@@ -6743,72 +6741,75 @@ a.logo-small {
     float: left;
     border: 1px solid #fff; }
 
-#socio-laboratorio .box-banner {
-  width: 100%;
+#socio-laboratorio {
   overflow: hidden;
-  height: 350px; }
-  #socio-laboratorio .box-banner .img-box-banner {
+  background: #fff; }
+  #socio-laboratorio .box-banner {
+    width: 100%;
     overflow: hidden;
-    position: relative;
-    height: 100%; }
-    #socio-laboratorio .box-banner .img-box-banner h4 {
-      position: absolute;
-      font-size: 70px;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: #fff;
-      bottom: 60px;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
-      #socio-laboratorio .box-banner .img-box-banner h4.socios {
-        right: 60px; }
-      #socio-laboratorio .box-banner .img-box-banner h4.laboratorio {
-        left: 60px; }
-      #socio-laboratorio .box-banner .img-box-banner h4 a {
+    height: 350px; }
+    #socio-laboratorio .box-banner .img-box-banner {
+      overflow: hidden;
+      position: relative;
+      height: 100%; }
+      #socio-laboratorio .box-banner .img-box-banner h4 {
+        position: absolute;
+        font-size: 70px;
+        font-weight: 800;
+        text-transform: uppercase;
         color: #fff;
-        text-decoration: none;
-        cursor: pointer; }
-  #socio-laboratorio .box-banner .box-content {
-    height: 100%;
-    padding: 20px;
-    font-size: 14px;
-    text-align: justify;
-    font-weight: 200; }
-  #socio-laboratorio .box-banner.blue .box-content {
-    background: #255984;
-    color: #fff;
-    position: relative; }
-    #socio-laboratorio .box-banner.blue .box-content:after {
-      right: 100%;
-      bottom: 65px;
-      border: solid transparent;
-      content: " ";
-      height: 0;
-      width: 0;
-      position: absolute;
-      pointer-events: none;
-      border-color: rgba(37, 89, 132, 0);
-      border-right-color: #255984;
-      border-width: 45px;
-      margin-top: -45px;
-      z-index: 99; }
-  #socio-laboratorio .box-banner.white .box-content {
-    background: #f4f4f4;
-    color: #255984;
-    position: relative; }
-    #socio-laboratorio .box-banner.white .box-content:after {
-      left: 100%;
-      bottom: 65px;
-      border: solid transparent;
-      content: " ";
-      height: 0;
-      width: 0;
-      position: absolute;
-      pointer-events: none;
-      border-color: rgba(244, 244, 244, 0);
-      border-left-color: #f4f4f4;
-      border-width: 45px;
-      margin-top: -45px;
-      z-index: 99; }
+        bottom: 60px;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
+        #socio-laboratorio .box-banner .img-box-banner h4.socios {
+          right: 60px; }
+        #socio-laboratorio .box-banner .img-box-banner h4.laboratorio {
+          left: 60px; }
+        #socio-laboratorio .box-banner .img-box-banner h4 a {
+          color: #fff;
+          text-decoration: none;
+          cursor: pointer; }
+    #socio-laboratorio .box-banner .box-content {
+      height: 100%;
+      padding: 20px;
+      font-size: 14px;
+      text-align: justify;
+      font-weight: 200; }
+    #socio-laboratorio .box-banner.blue .box-content {
+      background: #255984;
+      color: #fff;
+      position: relative; }
+      #socio-laboratorio .box-banner.blue .box-content:after {
+        right: 100%;
+        bottom: 65px;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(37, 89, 132, 0);
+        border-right-color: #255984;
+        border-width: 45px;
+        margin-top: -45px;
+        z-index: 99; }
+    #socio-laboratorio .box-banner.white .box-content {
+      background: #f4f4f4;
+      color: #255984;
+      position: relative; }
+      #socio-laboratorio .box-banner.white .box-content:after {
+        left: 100%;
+        bottom: 65px;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(244, 244, 244, 0);
+        border-left-color: #f4f4f4;
+        border-width: 45px;
+        margin-top: -45px;
+        z-index: 99; }
 
 #gallery-socio-laboratorio {
   width: 90%;
