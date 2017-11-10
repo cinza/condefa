@@ -24,7 +24,6 @@ NoticiaSocio.add({
   imgPromo:{label:"Imagen de noticia", type: Types.CloudinaryImage, required: true, default:""},
   imgPromoFull:{label:"Imagen de noticia tamaño completo:", type: Types.CloudinaryImage, required:true, default:""},
   urlVideoYoutube:{label:"URL video de Youtube", type:String},
-  urlVideoVimeo:{label:"URL video de Vimmeo", type:String},
   description:{label:"Descripción pequeña", type:Types.Text},
   content:{label:"Contenido", type:Types.Html, wysiwyg: true, height:500,},
   category:{label:"Categoria", type: Types.Select, options: 'noticia,promocion', default:'noticia'},

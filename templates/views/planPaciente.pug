@@ -19,23 +19,24 @@ block content
 
 						a(href='/plan-paciente/'+item.slug target="_blank")
 							.box-news-media-wrapper.col-md-5.col-sm-5.col-xs-5.nopadding
-								- if((item.urlVideoYoutube != '')&& item.urlVideoVimeo != '')
+								- if(item.urlVideoYoutube != '')
 									.box-news-icon-play
+										i(class="fa fa-play-circle fa-5x")
 								- if(item.imgPromo.secure_url)
 									img(src=item.imgPromo.secure_url alt=item.title).img-responsive
 							.box-news-content.col-md-7.col-sm-7.col-xs-7.nopadding
 								.box-news-top
 									h3 #{item.title}
-									span #{moment.locale('es')&&moment(item.createdAt).format("LL")} 
+									span #{moment.locale('es')&&moment(item.createdAt).format("LL")}
 
 								.box-news-preview-content
 									!= item.description
-									
+
 				.col-plan.pages-nav
 					if(locals.data.planPaciente.previous)
 						a(href="?page="+previousPage).previous  Anterior <i class="fa fa-arrow-left" aria-hidden="true"></i>
 					if(locals.data.planPaciente.next)
-						a(href="?page="+nextPage).next Siguiente 
+						a(href="?page="+nextPage).next Siguiente
 							<i class="fa fa-arrow-right" aria-hidden="true"></i>
 		div.col-md-3.col-sm-12.col-xs-12.right
 			.box-old-wrapper
@@ -46,12 +47,9 @@ block content
 							a(href='/plan-paciente/'+item.slug target="_blank")
 								.box-old-news-title
 									h4 #{item.title}
-									span  #{moment.locale('es')&&moment(item.createdAt).format("LL")} 
+									span  #{moment.locale('es')&&moment(item.createdAt).format("LL")}
 								.box-old-news-content
 										p #{item.description}
-				- }else{		
+				- }else{
 						span No hay noticias anteriores
 				- }
-
-	
-	

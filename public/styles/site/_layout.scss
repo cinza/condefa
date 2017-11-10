@@ -11,6 +11,16 @@ body{
 	}
 
 }
+.box-news-icon-play{
+	position:absolute;
+	top: 100px;
+	left: 0;
+	right:0;
+	bottom:0;
+	width: 100%;
+	color:#fff;
+	text-align: center;
+}
 .navbar-default{
 	background:none;
 	border:none;
@@ -1055,6 +1065,7 @@ a.logo-small{
 
 		}
 		.box-monthly-content{
+			position: relative;
 			width: 90%;
 			overflow: hidden;
 			.box-monthly-media{

@@ -31,8 +31,9 @@ block content
                 div.col-md-4.col-sm-12.col-xs-12.salud-preview-box.socio
                   a(href="/socio/"+item.slug target="_blank")
                     .salud-preview-media
-                      //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                      - if((item.urlVideoYoutube != ''))
                         .box-news-icon-play
+                          i(class="fa fa-play-circle fa-5x")
                       img(src=item.imgPromo.secure_url alt=item.title)
                     .salud-preview-box-content.socio.news-socio
                       h6 #{item.title}
@@ -64,8 +65,9 @@ block content
                 div.col-md-4.col-sm-12.col-xs-12.salud-preview-box.socio
                   a(href="/socio/"+item.slug target="_blank")
                     .salud-preview-media
-                      //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                      - if((item.urlVideoYoutube != ''))
                         .box-news-icon-play
+                          i(class="fa fa-play-circle fa-5x")
                       img(src=item.imgPromo.secure_url alt=item.title)
                     .salud-preview-box-content.socio.news-socio
                       h6 #{item.title}

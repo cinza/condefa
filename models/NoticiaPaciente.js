@@ -23,6 +23,7 @@ NoticiaPaciente.add({
   title:{label:"Nombre Noticia", type:String, default:"Noticia"},
   imgPromo:{label:"Imagen de noticia 350x280px", type: Types.CloudinaryImage, required: true, default:""},
   imgPromoFull:{label:"Imagen de noticia tamaño completo:", type: Types.CloudinaryImage, required:true, default:""},
+  urlVideoYoutube:{label:"URL video de Youtube ", type:String},
   description:{label:"Descripción, máximo 100 caracteres", type:Types.Text, max: 100},
   content:{label:"Contenido", type:Types.Html, wysiwyg: true, height:500,},
   category:{label:"Categoria", type: Types.Select, options: 'laboratorio, medicina, producción, otros, farmacia, noticia', default:'farmacia'},

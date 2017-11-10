@@ -4,6 +4,7 @@ block content
   - var currentMonth = new Date().getMonth()+1;
   - var monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio","Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
   - var contentMonth = ["noticiaEn", "noticiaFeb", "noticaMar", "noticiaAbr", "noticiaMay", "noticiaJun","noticiaJul", "noticiaAgo", "noticiaSept", "noticiaOct", "noticiaNov", "noticiaDic"];
+
   section#top-banner.commercial
     if(salud)
     .bannerComercial
@@ -90,8 +91,9 @@ block content
               div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
                 a(href="/salud-al-dia/"+item.slug target="_blank")
                   .salud-preview-media
-                    //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                    - if((item.urlVideoYoutube != ''))
                       .box-news-icon-play
+                      i(class="fa fa-play-circle fa-5x")
                     img(src=item.imgPromo.secure_url alt=item.title)
                   .salud-preview-box-content
                     span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
@@ -112,8 +114,9 @@ block content
               div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
                 a(href="/salud-al-dia/"+item.slug target="_blank")
                   .salud-preview-media
-                    //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                    - if((item.urlVideoYoutube != ''))
                       .box-news-icon-play
+                        i(class="fa fa-play-circle fa-5x")
                     img(src=item.imgPromo.secure_url alt=item.title)
                   .salud-preview-box-content
                     span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
@@ -134,8 +137,9 @@ block content
               div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
                 a(href="/salud-al-dia/"+item.slug target="_blank")
                   .salud-preview-media
-                    //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                    - if((item.urlVideoYoutube != ''))
                       .box-news-icon-play
+                        i(class="fa fa-play-circle fa-5x")
                     img(src=item.imgPromo.secure_url alt=item.title)
                   .salud-preview-box-content
                     span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
@@ -155,8 +159,9 @@ block content
               div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
                 a(href="/salud-al-dia/"+item.slug target="_blank")
                   .salud-preview-media
-                    //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                    - if((item.urlVideoYoutube != ''))
                       .box-news-icon-play
+                        i(class="fa fa-play-circle fa-5x")
                     img(src=item.imgPromo.secure_url alt=item.title)
                   .salud-preview-box-content
                     span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
@@ -176,8 +181,9 @@ block content
               div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
                 a(href="/salud-al-dia/"+item.slug target="_blank")
                   .salud-preview-media
-                    //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                    - if((item.urlVideoYoutube != ''))
                       .box-news-icon-play
+                        i(class="fa fa-play-circle fa-5x")
                     img(src=item.imgPromo.secure_url alt=item.title)
                   .salud-preview-box-content
                     span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
@@ -197,8 +203,9 @@ block content
               div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
                 a(href="/salud-al-dia/"+item.slug target="_blank")
                   .salud-preview-media
-                    //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                    - if((item.urlVideoYoutube != ''))
                       .box-news-icon-play
+                        i(class="fa fa-play-circle fa-5x")
                     img(src=item.imgPromo.secure_url alt=item.title)
                   .salud-preview-box-content
                     span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
@@ -220,8 +227,9 @@ block content
               div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
                 a(href="/salud-al-dia/"+item.slug target="_blank")
                   .salud-preview-media
-                    //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                    - if((item.urlVideoYoutube != ''))
                       .box-news-icon-play
+                        i(class="fa fa-play-circle fa-5x")
                     img(src=item.imgPromo.secure_url alt=item.title)
                   .salud-preview-box-content
                     span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
@@ -243,8 +251,9 @@ block content
               div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
                 a(href="/salud-al-dia/"+item.slug target="_blank")
                   .salud-preview-media
-                    //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                    - if((item.urlVideoYoutube != ''))
                       .box-news-icon-play
+                        i(class="fa fa-play-circle fa-5x")
                     img(src=item.imgPromo.secure_url alt=item.title)
                   .salud-preview-box-content
                     span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
@@ -266,8 +275,9 @@ block content
               div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
                 a(href="/salud-al-dia/"+item.slug target="_blank")
                   .salud-preview-media
-                    //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                    - if((item.urlVideoYoutube != ''))
                       .box-news-icon-play
+                        i(class="fa fa-play-circle fa-5x")
                     img(src=item.imgPromo.secure_url alt=item.title)
                   .salud-preview-box-content
                     span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
@@ -288,8 +298,9 @@ block content
               div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
                 a(href="/salud-al-dia/"+item.slug target="_blank")
                   .salud-preview-media
-                    //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                    - if((item.urlVideoYoutube != ''))
                       .box-news-icon-play
+                        i(class="fa fa-play-circle fa-5x")
                     img(src=item.imgPromo.secure_url alt=item.title)
                   .salud-preview-box-content
                     span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
@@ -311,8 +322,9 @@ block content
               div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
                 a(href="/salud-al-dia/"+item.slug target="_blank")
                   .salud-preview-media
-                    //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                    - if((item.urlVideoYoutube != ''))
                       .box-news-icon-play
+                        i(class="fa fa-play-circle fa-5x")
                     img(src=item.imgPromo.secure_url alt=item.title)
                   .salud-preview-box-content
                     span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
@@ -333,8 +345,9 @@ block content
               div.col-md-4.col-sm-12.col-xs-12.nopadding.salud-preview-box
                 a(href="/salud-al-dia/"+item.slug target="_blank")
                   .salud-preview-media
-                    //- - if((item.urlVideoYoutube != '')&& (item.urlVideoVimeo != ''))
+                    - if((item.urlVideoYoutube != ''))
                       .box-news-icon-play
+                        i(class="fa fa-play-circle fa-5x")
                     img(src=item.imgPromo.secure_url alt=item.title)
                   .salud-preview-box-content
                     span.salud-preview-box-fecha #{moment.locale('es')&&moment(item.createdAt).format("LL")}
