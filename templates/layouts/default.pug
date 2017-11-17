@@ -93,7 +93,7 @@ html
 								-else if(locals.laboratorio || locals.socio)
 									each link in internal
 										-if(link.key === 'online')
-											li(class=(section == link.key ? 'active' : null)): a(href="javascript:window.open('http://ce.farmaciascondefa.com/co', 'CONDEFA', 'scrollbars=yes, title=CONDEFA resizable=yes location=no status=no')" id=link.key)= link.label
+											li(class=(section == link.key ? 'active' : null)): a(href="javascript:window.open('http://ce.farmaciascondefa.com/co/modulos/m_inicio.aspx', 'CONDEFA', 'scrollbars=yes, title=CONDEFA resizable=yes location=no status=no')" id=link.key)= link.label
 										-else
 											li(class=(section == link.key ? 'active' : null)): a(href=link.href id=link.key)= link.label
 								-else
