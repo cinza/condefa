@@ -88,10 +88,14 @@ html
 							ul.nav.navbar-nav.navbar-right
 								-if(locals.socioLaboratorio)
 									each link in socioLinks
-										li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
+										
+										li(class=(section == link.key ? 'active' : null)): a(href=link.href id=link.key)= link.label
 								-else if(locals.laboratorio || locals.socio)
 									each link in internal
-										li(class=(section == link.key ? 'active' : null)): a(href=link.href id=link.key)= link.label
+										-if(link.key === 'online')
+											li(class=(section == link.key ? 'active' : null)): a(href="javascript:window.open('http://ce.farmaciascondefa.com/co', 'CONDEFA', 'scrollbars=yes, title=CONDEFA resizable=yes location=no status=no')" id=link.key)= link.label
+										-else
+											li(class=(section == link.key ? 'active' : null)): a(href=link.href id=link.key)= link.label
 								-else
 									each link in navLinks
 										li(class=(section == link.key ? 'active' : null)): a(href=link.href )= link.label

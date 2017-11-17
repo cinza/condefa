@@ -19,7 +19,7 @@ exports = module.exports = function (req, res) {
     promo:[],
     promosRelacionadas:[],
     promosMes:[],
-    category:'Salud al día'
+    category:'login'
   }
 
   view.on('init', function(next){

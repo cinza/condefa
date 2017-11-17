@@ -12,14 +12,14 @@ block content
         if(locals.data.promo != '')
           h2 #{locals.data.promo.title}
           h6 #{moment.locale('es')&&moment(locals.data.promo.createdAt).format("LL")}
-          
-          .social-wrapper
-            <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox"></div>
-            - if(locals.data.promo.urlVideoYoutube != ''){
-              iframe( id="iframe-video" width="100%" height="600px" src="" frameborder="0" allowfullscreen)
-            -} else{
-              img(src=locals.data.promo.imgPromoFull.secure_url alt=locals.data.promo.title )
-            -}
+          if(locals.data.category != 'login')
+            .social-wrapper
+              <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox"></div>
+              - if(locals.data.promo.urlVideoYoutube != ''){
+                iframe( id="iframe-video" width="100%" height="600px" src="" frameborder="0" allowfullscreen)
+              -} else{
+                img(src=locals.data.promo.imgPromoFull.secure_url alt=locals.data.promo.title )
+              -}
           .content-detail-text
             != locals.data.promo.content
       .content-more-news-wrapper
