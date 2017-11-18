@@ -64,7 +64,7 @@ block content
       if(valueUser[0] == 200){
         valueUser[1] = valueUser[1].toLowerCase();
         valueUser[1]=="socio"? localStorage.userSocio = true : localStorage.userLab = true;
-        window.open(url+valueUser[1]);
+        window.open(url+valueUser[1], '_self');
       }
     }
 
