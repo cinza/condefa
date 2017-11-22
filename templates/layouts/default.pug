@@ -86,6 +86,7 @@ html
 							//- 			li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
 							//- - else
 							ul.nav.navbar-nav.navbar-right
+								
 								-if(locals.socioLaboratorio)
 									each link in socioLinks
 										
@@ -97,8 +98,12 @@ html
 										-else
 											li(class=(section == link.key ? 'active' : null)): a(href=link.href id=link.key)= link.label
 								-else
-									each link in navLinks
-										li(class=(section == link.key ? 'active' : null)): a(href=link.href )= link.label
+									-if(locals.noticia)
+										each link in saludMenu
+											li(class=(section == link.key ? 'active' : null)): a(href=link.href id=link.key)= link.label
+									-else
+										each link in navLinks
+											li(class=(section == link.key ? 'active' : null)): a(href=link.href )= link.label
 								
 
 		

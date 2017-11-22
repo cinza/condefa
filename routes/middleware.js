@@ -20,11 +20,20 @@ var _ = require('lodash');
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
 		{ label: 'Inicio', key: 'home', href: '/' },
-		{ label: 'Quienes somos', key: 'contact', href: '#about' },
+		{ label: 'Quienes somos', key: 'whoweare', href: '#about' },
 		{ label: 'Farmacias', key:'farmacy' , href:'#map-findus'},
-		{label: 'Contacto', key:'contact', href:'#contact'},
+		{label: 'Contacto', key:'contactus', href:'#contact'},
 		{label:'Socios y Laboratorios', key:'socioLab', href:'/socio-laboratorio'}
 	];
+
+	res.locals.saludMenu =[
+		{ label: 'Inicio', key: 'home', href: '/' },
+		{ label: 'Quienes somos', key: 'whoweare', href: '/#about' },
+		{ label: 'Farmacias', key:'farmacy' , href:'/#map-findus'},
+		{label: 'Contacto', key:'contactus', href:'/#contact'},
+		{label:'Socios y Laboratorios', key:'socioLab', href:'/socio-laboratorio'}
+	];
+
 	res.locals.socioLinks = [
 		{label: 'Inicio', key:'home', href:'/'},
 		{label: 'Ingreso', key:'login', href:'#login-socio-laboratorio'},
@@ -32,7 +41,6 @@ exports.initLocals = function (req, res, next) {
 		{label: 'laboratorios', key:'laboratorio', href:'#laboratorio'},
 	];
 	res.locals.internal = [
-		{label:'Inicio',key:'home', href:'/'},
 		{label:'Condefa Online',key:'online', href:'http://ce.farmaciascondefa.com/co/modulos/m_inicio.aspx'},
 		{label:'Salir',key:'logout', href:'/'}
 	];

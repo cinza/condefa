@@ -9,6 +9,7 @@ exports = module.exports = function (req, res) {
 	// item in the header navigation.
 	locals.section = 'noticia';
 	locals.section = 'salud';
+	locals.section = 'saludMenu'
 	locals.data = {
 		noticias:[],
 		noticiaEn:[],
