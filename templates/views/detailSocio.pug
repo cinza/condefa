@@ -5,7 +5,7 @@ block content
   - var currentMonth = new Date().getMonth();
   - var monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio","Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
   - var videoYoutube = locals.data.promo.urlVideoYoutube;
-  
+
   #content-detail-wrapper
     .column-left.col-md-9.col-sm-8.col-xs-12
       .content-detail
@@ -28,26 +28,26 @@ block content
           each item in locals.data.promosRelacionadas
             .box-content-more-news.hidden-xs
               .box-content-more-left
-                img(src=item.imgPromo.secure_url alt="") 
+                img(src=item.imgPromo.secure_url alt="")
               .box-content-more-right
-                
-                a(href="/salud-al-dia/"+item.slug target="_blank")
+
+                a(href="/socio/"+item.slug target="_blank")
                   h4 #{item.title}
                   span #{moment.locale('es')&&moment(item.createdAt).format("LL")}
-            
+
             .box-content-more-news.hidden-md.hidden-xl.hidden-sm.col-xs-6.show.mobile
               .box-content-more-left
-                img(src=item.imgPromo.secure_url alt="") 
+                img(src=item.imgPromo.secure_url alt="")
               .box-content-more-right
-                a(href="/salud-al-dia/"+item.slug target="_blank")
+                a(href="/socio/"+item.slug target="_blank")
                   h4 #{item.title}
                   span #{moment.locale('es')&&moment(item.createdAt).format("LL")}
 
         -}else{
           p.no-news No hay más noticas relacionadas
         -}
-        
-          
+
+
     .colum-right.col-md-3.col-sm-4.hidden-xs
       .colum-right-wrapper
         h5 #{monthNames[currentMonth]}
@@ -61,11 +61,11 @@ block content
               .box-monthly-media
                 img(src=item.imgPromo.secure_url alt=item.title)
               .box-monthly-text
-                a(href="/salud-al-dia/"+item.slug target="_blank")
+                a(href="/socio/"+item.slug target="_blank")
                   span #{moment.locale('es')&&moment(item.createdAt).format("LL")}
                   h6 #{item.title}
                   p #{item.description}
-            
+
         -} else{
           p.no-news No hay más noticias en este mes
         -}
@@ -73,7 +73,4 @@ block content
       var video = '', newVideo;
       video = '#{videoYoutube}';
       newVideo = video.replace("watch?v=",'embed/');
-      document.getElementById('iframe-video').src= newVideo;    
-
-
-  
+      document.getElementById('iframe-video').src= newVideo;
